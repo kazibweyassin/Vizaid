@@ -11,12 +11,6 @@ const nextConfig: NextConfig = {
       },
     ],
   },
-  // Set the root directory to silence the lockfile warning
-  experimental: {
-    turbo: {
-      root: process.cwd(),
-    },
-  },
 };
 
 export default nextConfig;
