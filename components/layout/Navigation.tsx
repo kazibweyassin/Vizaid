@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { useState } from 'react';
 
 export default function Navigation() {
@@ -19,12 +20,16 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center">
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
-              </svg>
+            <div className="w-10 h-10 flex items-center justify-center">
+              <Image 
+                src="/logo.png" 
+                alt="Vizaid Logo" 
+                width={40} 
+                height={40} 
+                className="object-contain"
+              />
             </div>
-            <span className="text-xl font-bold text-red-600">Vizaid</span>
+            <span className="text-xl font-bold" style={{color: '#5D0531'}}>Vizaid</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -33,7 +38,7 @@ export default function Navigation() {
               <Link
                 key={`${link.href}-${link.label}-${index}`}
                 href={link.href}
-                className="text-gray-800 hover:text-red-600 transition-colors font-medium text-sm"
+                className="text-gray-800 transition-colors font-medium text-sm hover:opacity-70"
               >
                 {link.label}
               </Link>
@@ -42,17 +47,17 @@ export default function Navigation() {
 
           {/* Utility Icons */}
           <div className="hidden md:flex items-center space-x-6">
-            <button className="text-gray-800 hover:text-red-600 transition-colors" aria-label="Favorites">
+            <button className="text-gray-800 transition-colors hover:opacity-70" aria-label="Favorites">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </button>
-            <button className="text-gray-800 hover:text-red-600 transition-colors" aria-label="Account">
+            <button className="text-gray-800 transition-colors hover:opacity-70" aria-label="Account">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </button>
-            <Link href="/contact" className="text-gray-800 hover:text-red-600 transition-colors" aria-label="Contact">
+            <Link href="/contact" className="text-gray-800 transition-colors hover:opacity-70" aria-label="Contact">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>

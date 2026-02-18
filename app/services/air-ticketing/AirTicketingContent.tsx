@@ -81,7 +81,7 @@ export default function AirTicketingContent() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow"
             >
-              <div className="text-red-600 mb-4">{benefit.icon}</div>
+              <div className="mb-4" style={{color: '#5D0531'}}>{benefit.icon}</div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">{benefit.title}</h3>
               <p className="text-gray-600 text-sm">{benefit.description}</p>
             </motion.div>
@@ -105,10 +105,11 @@ export default function AirTicketingContent() {
                 {popularDestinations.map((destination) => (
                   <div
                     key={destination}
-                    className="p-4 bg-gray-50 rounded-lg hover:bg-red-50 hover:border-red-200 border border-transparent transition-colors"
+                    className="p-4 rounded-lg border border-transparent transition-colors"
+                    style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)'}}
                   >
                     <div className="flex items-center">
-                      <span className="text-red-600 mr-2">✈️</span>
+                      <span className="mr-2" style={{color: '#5D0531'}}>✌️</span>
                       <span className="text-gray-700 font-medium text-sm">{destination}</span>
                     </div>
                   </div>
@@ -120,23 +121,23 @@ export default function AirTicketingContent() {
               <h3 className="text-xl font-bold text-gray-900 mb-4">Why Choose Us?</h3>
               <ul className="space-y-3">
                 <li className="flex items-start">
-                  <span className="text-red-600 mr-2 font-bold">✓</span>
+                  <span className="mr-2 font-bold" style={{color: '#5D0531'}}>✓</span>
                   <span className="text-gray-700">Partnership with major international airlines</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 mr-2 font-bold">✓</span>
+                  <span className="mr-2 font-bold" style={{color: '#5D0531'}}>✓</span>
                   <span className="text-gray-700">Competitive pricing and special deals</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 mr-2 font-bold">✓</span>
+                  <span className="mr-2 font-bold" style={{color: '#5D0531'}}>✓</span>
                   <span className="text-gray-700">Expert travel consultants</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 mr-2 font-bold">✓</span>
+                  <span className="mr-2 font-bold" style={{color: '#5D0531'}}>✓</span>
                   <span className="text-gray-700">Easy booking and payment process</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-red-600 mr-2 font-bold">✓</span>
+                  <span className="mr-2 font-bold" style={{color: '#5D0531'}}>✓</span>
                   <span className="text-gray-700">24/7 customer support</span>
                 </li>
               </ul>

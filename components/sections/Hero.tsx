@@ -68,7 +68,8 @@ export default function Hero() {
           </div>
           <button
             type="submit"
-            className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 w-full md:w-auto justify-center transition-colors"
+            className="text-white px-6 py-3 rounded-lg font-medium flex items-center gap-2 w-full md:w-auto justify-center transition-colors hover:opacity-90"
+            style={{backgroundColor: '#5D0531'}}
           >
             Search
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -114,7 +115,7 @@ export default function Hero() {
               Only Vizaid
             </h1>
             <Link href="/services/tours">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 rounded-lg font-medium transition-colors text-lg">
+              <button className="text-white px-8 py-4 rounded-lg font-medium transition-colors text-lg hover:opacity-90" style={{backgroundColor: '#5D0531'}}>
                 Discover experiences
               </button>
             </Link>

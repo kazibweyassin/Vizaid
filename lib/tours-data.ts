@@ -9,6 +9,12 @@ export const tourPackages: TourPackage[] = [
     duration: '3 Days / 2 Nights',
     price: 'From $700 per person',
     image: 'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+    ],
     description: 'Experience the majestic mountain gorillas in their natural habitat. This once-in-a-lifetime adventure takes you deep into the Bwindi Impenetrable Forest, home to half of the world\'s remaining mountain gorilla population.',
     highlights: [
       'Gorilla trekking permit included',
@@ -19,6 +25,42 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'domestic',
     category: 'Wildlife',
+    difficulty: 'Challenging',
+    bestTimeToVisit: 'June-August and December-February (dry seasons)',
+    groupSize: 'Small groups (2-8 people)',
+    maxAltitude: '2,607 m (8,551 ft)',
+    physicalRequirements: 'Moderate to good fitness level. Trekking involves steep terrain and can take 2-8 hours. Participants should be able to walk for extended periods at high altitude.',
+    whyChooseThis: [
+      'See 50% of the world\'s remaining mountain gorillas',
+      'Expert naturalist guides with decades of experience',
+      'Small group sizes ensure intimate wildlife encounters',
+      'Comfortable eco-lodges with stunning views',
+      'Commitment to conservation and community support',
+      'Flexible itineraries based on gorilla movements',
+    ],
+    rating: 4.9,
+    reviewCount: 247,
+    seasonalInfo: 'Best visited during dry seasons. December-February offers sunny days; June-August is lush and green. Avoid rainy seasons (March-May, September-November).',
+    pricingTiers: [
+      {
+        name: 'Standard',
+        pricePerPerson: 700,
+        description: 'Comfortable lodge accommodation with basic amenities',
+        features: ['3-star lodge', 'Shared bathroom', 'Basic meals'],
+      },
+      {
+        name: 'Premium',
+        pricePerPerson: 1200,
+        description: 'Upscale lodge with enhanced comfort and amenities',
+        features: ['4-star lodge', 'Private bathroom', 'Fine dining meals'],
+      },
+      {
+        name: 'Luxury',
+        pricePerPerson: 1800,
+        description: 'Exclusive eco-resort experience with premium services',
+        features: ['5-star resort', 'Suite accommodation', 'Gourmet meals', 'Spa services'],
+      },
+    ],
     itinerary: [
       {
         day: 1,
@@ -31,6 +73,8 @@ export const tourPackages: TourPackage[] = [
           'Evening briefing about gorilla trekking',
           'Dinner and overnight at lodge',
         ],
+        meals: 'Lunch & Dinner',
+        accommodation: 'Bwindi Impenetrable Forest Lodge',
       },
       {
         day: 2,
@@ -46,6 +90,8 @@ export const tourPackages: TourPackage[] = [
           'Optional community walk',
           'Dinner and overnight',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Bwindi Impenetrable Forest Lodge',
       },
       {
         day: 3,
@@ -57,6 +103,7 @@ export const tourPackages: TourPackage[] = [
           'Lunch en route',
           'Drop-off at airport or hotel',
         ],
+        meals: 'Breakfast & Lunch',
       },
     ],
     costBreakdown: {
@@ -85,6 +132,12 @@ export const tourPackages: TourPackage[] = [
     duration: '4 Days / 3 Nights',
     price: 'From $600 per person',
     image: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop',
+    ],
     description: 'Wildlife safari in one of Uganda\'s most beautiful national parks. Spot elephants, lions, hippos, and over 600 bird species in their natural habitat.',
     highlights: [
       'Game drives',
@@ -95,6 +148,42 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'domestic',
     category: 'Wildlife',
+    difficulty: 'Easy',
+    bestTimeToVisit: 'Year-round (best June-August and December-February)',
+    groupSize: 'Small groups (2-12 people)',
+    maxAltitude: '621 m (2,037 ft)',
+    physicalRequirements: 'Easy. Minimal walking required. Game drives from open-sided vehicles. Suitable for all fitness levels including families and seniors.',
+    whyChooseThis: [
+      'Home to 95 mammal species and over 600 bird species',
+      'Year-round wildlife viewing opportunities',
+      'Stunning Kazinga Channel boat cruises with abundant hippos',
+      'Expert wildlife photographers guide available',
+      'Comfortable mid-range and luxury lodge options',
+      'Perfect for families and first-time safari-goers',
+    ],
+    rating: 4.8,
+    reviewCount: 198,
+    seasonalInfo: 'Open year-round. Rainy seasons (April-May, October-November) offer lush landscapes with fewer tourists. Dry seasons provide clearer sightings.',
+    pricingTiers: [
+      {
+        name: 'Explorer',
+        pricePerPerson: 600,
+        description: 'Cozy mid-range lodge with essential amenities',
+        features: ['3-star lodge', 'Twin/double rooms', 'Shared facilities'],
+      },
+      {
+        name: 'Safari Pro',
+        pricePerPerson: 950,
+        description: 'Premium lodge experience with better views',
+        features: ['4-star lodge', 'Private bathroom', 'Better meal plans'],
+      },
+      {
+        name: 'Luxury Explorer',
+        pricePerPerson: 1500,
+        description: 'Exclusive wildlife experience with premium service',
+        features: ['5-star resort', 'Riverside suites', 'Private guide option'],
+      },
+    ],
     itinerary: [
       {
         day: 1,
@@ -107,6 +196,8 @@ export const tourPackages: TourPackage[] = [
           'Evening game drive',
           'Dinner and overnight',
         ],
+        meals: 'Lunch & Dinner',
+        accommodation: 'Queen Elizabeth Safari Lodge',
       },
       {
         day: 2,
@@ -119,6 +210,8 @@ export const tourPackages: TourPackage[] = [
           'Afternoon game drive',
           'Dinner and overnight',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Queen Elizabeth Safari Lodge',
       },
       {
         day: 3,
@@ -130,6 +223,8 @@ export const tourPackages: TourPackage[] = [
           'Cultural visit to local community',
           'Dinner and overnight',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Queen Elizabeth Safari Lodge',
       },
       {
         day: 4,
@@ -141,6 +236,7 @@ export const tourPackages: TourPackage[] = [
           'Lunch en route',
           'Drop-off',
         ],
+        meals: 'Breakfast & Lunch',
       },
     ],
     costBreakdown: {
@@ -170,6 +266,12 @@ export const tourPackages: TourPackage[] = [
     duration: '3 Days / 2 Nights',
     price: 'From $550 per person',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+    ],
     description: 'Witness the powerful Murchison Falls where the Nile River forces its way through a narrow gorge. Experience incredible wildlife viewing and scenic beauty.',
     highlights: [
       'Murchison Falls visit',
@@ -180,6 +282,42 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'domestic',
     category: 'Wildlife',
+    difficulty: 'Moderate',
+    bestTimeToVisit: 'June-August and December-February',
+    groupSize: 'Small groups (2-10 people)',
+    maxAltitude: '938 m (3,077 ft)',
+    physicalRequirements: 'Moderate fitness. Mix of vehicle travel and short walks. Some trails to Murchison Falls may be steep.',
+    whyChooseThis: [
+      'One of Africa\'s most powerful waterfalls',
+      'Exceptional wildlife diversity including lions and buffalo',
+      'Dramatic landscapes along the Nile River',
+      'Peaceful boat cruises with river wildlife',
+      'Fewer tourists than other parks',
+      'Professional naturalist guides',
+    ],
+    rating: 4.7,
+    reviewCount: 162,
+    seasonalInfo: 'Dry seasons (June-August, December-February) offer best game viewing. Green season (March-May) showcases lush vegetation and fewer visitors.',
+    pricingTiers: [
+      {
+        name: 'Budget Safari',
+        pricePerPerson: 550,
+        description: 'Basic safari lodge with comfortable rooms',
+        features: ['3-star lodge', 'Standard rooms', 'Basic amenities'],
+      },
+      {
+        name: 'Standard Safari',
+        pricePerPerson: 850,
+        description: 'Mid-range lodge with good facilities',
+        features: ['4-star lodge', 'En-suite bathrooms', 'Full meal plan'],
+      },
+      {
+        name: 'Premium Safari',
+        pricePerPerson: 1300,
+        description: 'Luxury safari experience with river views',
+        features: ['5-star lodge', 'Deluxe rooms', 'Fine dining'],
+      },
+    ],
     itinerary: [
       {
         day: 1,
@@ -192,6 +330,8 @@ export const tourPackages: TourPackage[] = [
           'Evening game drive',
           'Dinner and overnight',
         ],
+        meals: 'Lunch & Dinner',
+        accommodation: 'Murchison Falls Safari Lodge',
       },
       {
         day: 2,
@@ -205,6 +345,8 @@ export const tourPackages: TourPackage[] = [
           'Afternoon game drive',
           'Dinner and overnight',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Murchison Falls Safari Lodge',
       },
       {
         day: 3,
@@ -217,6 +359,7 @@ export const tourPackages: TourPackage[] = [
           'Lunch en route',
           'Drop-off',
         ],
+        meals: 'Breakfast & Lunch',
       },
     ],
     costBreakdown: {
@@ -245,6 +388,12 @@ export const tourPackages: TourPackage[] = [
     duration: '2 Days / 1 Night',
     price: 'From $400 per person',
     image: 'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+    ],
     description: 'Track our closest relatives in the wild. Kibale Forest is home to the highest concentration of primates in Africa, including over 1,500 chimpanzees.',
     highlights: [
       'Chimpanzee tracking permit',
@@ -255,6 +404,42 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'domestic',
     category: 'Wildlife',
+    difficulty: 'Moderate',
+    bestTimeToVisit: 'June-August and December-February',
+    groupSize: 'Small groups (2-8 people)',
+    maxAltitude: '1,600 m (5,249 ft)',
+    physicalRequirements: 'Moderate hiking. Trail can be steep and muddy. Requires moderate to good fitness. Tracking can last 2-4 hours.',
+    whyChooseThis: [
+      'Highest concentration of chimpanzees in Africa',
+      'Experience intimate encounters with wild chimps',
+      'Pristine rainforest ecosystem',
+      'Excellent birdwatching opportunities',
+      'Knowledgeable and passionate local guides',
+      'The authentic "Chimpanzee tracking" experience',
+    ],
+    rating: 4.9,
+    reviewCount: 187,
+    seasonalInfo: 'Best from June-August (cooler) and December-February (dry season). May receive high rainfall but offers lush forest and fewer tourists.',
+    pricingTiers: [
+      {
+        name: 'Basic Tracker',
+        pricePerPerson: 400,
+        description: 'Eco-lodge with basic amenities and shared facilities',
+        features: ['Eco-lodge', 'Twin rooms', 'Local meals'],
+      },
+      {
+        name: 'Nature Lodge',
+        pricePerPerson: 700,
+        description: 'Comfortable lodge with private facilities',
+        features: ['3-star lodge', 'Private bathroom', 'Quality meals'],
+      },
+      {
+        name: 'Luxury Forest Retreat',
+        pricePerPerson: 1100,
+        description: 'Premium forest resort with full services',
+        features: ['4-star resort', 'Deluxe accommodation', 'Gourmet meals'],
+      },
+    ],
     itinerary: [
       {
         day: 1,
@@ -268,6 +453,8 @@ export const tourPackages: TourPackage[] = [
           'Briefing about chimpanzee tracking',
           'Dinner and overnight',
         ],
+        meals: 'Lunch & Dinner',
+        accommodation: 'Kibale Forest Eco-Lodge',
       },
       {
         day: 2,
@@ -282,6 +469,8 @@ export const tourPackages: TourPackage[] = [
           'Return journey',
           'Drop-off',
         ],
+        meals: 'Breakfast & Lunch',
+        accommodation: 'Kibale Forest Eco-Lodge',
       },
     ],
     costBreakdown: {
@@ -299,6 +488,7 @@ export const tourPackages: TourPackage[] = [
         'Travel insurance',
         'Tips',
         'Personal expenses',
+        'Optional activities',
       ],
     },
   },
@@ -309,6 +499,12 @@ export const tourPackages: TourPackage[] = [
     duration: '5 Days / 4 Nights',
     price: 'From $800 per person',
     image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+    ],
     description: 'Conquer the "Mountains of the Moon" - Africa\'s third highest peak. Experience stunning alpine scenery, unique flora, and challenging mountain terrain.',
     highlights: [
       'Mountain climbing',
@@ -319,6 +515,42 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'domestic',
     category: 'Adventure',
+    difficulty: 'Challenging',
+    bestTimeToVisit: 'June-August and December-February (dry seasons)',
+    groupSize: 'Small groups (4-8 people)',
+    maxAltitude: '5,109 m (16,763 ft)',
+    physicalRequirements: 'Excellent fitness required. High altitude trekking with long daily walks (6-8 hours). Altitude acclimatization essential. Not suitable for beginners.',
+    whyChooseThis: [
+      'Africa\'s third highest mountain with glaciers',
+      'Unique alpine ecosystem with rare flora',
+      'Small group sizes for personalized experience',
+      'Professional mountain guides with rescue certification',
+      'Porters handle all equipment',
+      'Summit certificate awarded',
+    ],
+    rating: 4.6,
+    reviewCount: 89,
+    seasonalInfo: 'Best June-August (dry, clear weather) and December-February. Avoid April-May and September-November rainy seasons.',
+    pricingTiers: [
+      {
+        name: 'Standard Trek',
+        pricePerPerson: 800,
+        description: 'Basic mountain camping experience',
+        features: ['Camping accommodation', 'Standard meals', 'Basic guides'],
+      },
+      {
+        name: 'Premium Trek',
+        pricePerPerson: 1200,
+        description: 'Enhanced comfort with better meals',
+        features: ['Camping with better tents', 'Quality meals', 'Expert guides'],
+      },
+      {
+        name: 'VIP Summit',
+        pricePerPerson: 1600,
+        description: 'Luxury mountain experience with maximum support',
+        features: ['Premium camping', 'Gourmet meals', 'Lead guide + assistant'],
+      },
+    ],
     itinerary: [
       {
         day: 1,
@@ -330,6 +562,8 @@ export const tourPackages: TourPackage[] = [
           'Start trek to Nyabitaba Hut',
           'Camping and dinner',
         ],
+        meals: 'Lunch & Dinner',
+        accommodation: 'Nyabitaba Hut Camp',
       },
       {
         day: 2,
@@ -341,6 +575,8 @@ export const tourPackages: TourPackage[] = [
           'Reach John Matte Hut',
           'Camping and dinner',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'John Matte Hut Camp',
       },
       {
         day: 3,
@@ -352,6 +588,8 @@ export const tourPackages: TourPackage[] = [
           'Camping at Bujuku Hut',
           'Dinner',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Bujuku Hut Camp',
       },
       {
         day: 4,
@@ -362,6 +600,8 @@ export const tourPackages: TourPackage[] = [
           'Descend to Kitandara Hut',
           'Camping and dinner',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Kitandara Hut Camp',
       },
       {
         day: 5,
@@ -373,6 +613,7 @@ export const tourPackages: TourPackage[] = [
           'Certificate presentation',
           'Transfer back',
         ],
+        meals: 'Breakfast & Lunch',
       },
     ],
     costBreakdown: {
@@ -402,6 +643,12 @@ export const tourPackages: TourPackage[] = [
     duration: '2 Days / 1 Night',
     price: 'From $300 per person',
     image: 'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1509316785289-025f5b846b35?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1544735716-392fe2489ffa?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+    ],
     description: 'Visit the source of the world\'s longest river and enjoy water activities including white-water rafting, kayaking, and boat cruises.',
     highlights: [
       'Source of the Nile visit',
@@ -412,6 +659,41 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'domestic',
     category: 'Adventure',
+    difficulty: 'Easy',
+    bestTimeToVisit: 'Year-round (best June-August)',
+    groupSize: 'All sizes welcome (can accommodate families)',
+    physicalRequirements: 'Easy. Minimal hiking. Water activities optional and catered to all fitness levels.',
+    whyChooseThis: [
+      'Iconic historic site - source of the Nile River',
+      'Thrilling water sports opportunities',
+      'Perfect for families and adventure seekers',
+      'Close to Kampala (2-3 hours)',
+      'Affordable adventure destination',
+      'Variety of activity options',
+    ],
+    rating: 4.5,
+    reviewCount: 145,
+    seasonalInfo: 'Open year-round. Sunny weather June-August. Rainy seasons (April-May, October-November) still accessible but wetter conditions.',
+    pricingTiers: [
+      {
+        name: 'Explorer',
+        pricePerPerson: 300,
+        description: 'Budget-friendly adventure with basic activities',
+        features: ['Basic hotel', 'Source visit + boat cruise', 'Guide included'],
+      },
+      {
+        name: 'Adventurer',
+        pricePerPerson: 500,
+        description: 'Includes white-water rafting experience',
+        features: ['Mid-range hotel', 'All activities', 'Professional rafting guide'],
+      },
+      {
+        name: 'Thrill-Seeker',
+        pricePerPerson: 750,
+        description: 'Premium experience with multiple activities',
+        features: ['Quality hotel', 'Rafting + kayaking + bungee', 'Expert guides'],
+      },
+    ],
     itinerary: [
       {
         day: 1,
@@ -426,6 +708,8 @@ export const tourPackages: TourPackage[] = [
           'Optional: White-water rafting',
           'Dinner and overnight',
         ],
+        meals: 'Lunch & Dinner',
+        accommodation: 'Jinja Adventure Hotel',
       },
       {
         day: 2,
@@ -438,6 +722,8 @@ export const tourPackages: TourPackage[] = [
           'Return journey to Kampala',
           'Drop-off',
         ],
+        meals: 'Breakfast & Lunch',
+        accommodation: 'Jinja Adventure Hotel',
       },
     ],
     costBreakdown: {
@@ -467,6 +753,12 @@ export const tourPackages: TourPackage[] = [
     duration: '5 Days / 4 Nights',
     price: 'From $1,200 per person',
     image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1516426122078-c23e76319801?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&h=800&fit=crop',
+    ],
     description: 'Explore the modern marvels of Dubai with our curated city tour. Experience luxury shopping, stunning architecture, and desert adventures.',
     highlights: [
       'Burj Khalifa visit',
@@ -477,6 +769,41 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'international',
     category: 'City Tour',
+    difficulty: 'Easy',
+    bestTimeToVisit: 'October-April (mild weather)',
+    groupSize: 'All group sizes (2-50+)',
+    physicalRequirements: 'Easy. Mostly vehicle and walking tours. No strenuous activities. Suitable for families and seniors.',
+    whyChooseThis: [
+      'World\'s tallest building (Burj Khalifa)',
+      'Luxury shopping and dining',
+      'Authentic desert safari experience',
+      'Perfect blend of modern and traditional',
+      'Year-round sunny weather',
+      'Safe and well-developed tourist infrastructure',
+    ],
+    rating: 4.8,
+    reviewCount: 324,
+    seasonalInfo: 'Best October-April with pleasant 25-30°C weather. May-September is extremely hot (40°C+).',
+    pricingTiers: [
+      {
+        name: 'City Explorer',
+        pricePerPerson: 1200,
+        description: 'Standard city tour experience',
+        features: ['4-star hotel', 'Main attractions', 'Group tours'],
+      },
+      {
+        name: 'Luxury Dubai',
+        pricePerPerson: 1800,
+        description: 'Premium experience with upscale hotels',
+        features: ['5-star hotel', 'VIP tours', 'Private guide option'],
+      },
+      {
+        name: 'Ultimate Dubai',
+        pricePerPerson: 2500,
+        description: 'All-inclusive luxury with exclusive experiences',
+        features: ['Burj Khalifa suite view', 'Private guide', 'Fine dining included'],
+      },
+    ],
     itinerary: [
       {
         day: 1,
@@ -488,6 +815,8 @@ export const tourPackages: TourPackage[] = [
           'Evening Dhow cruise with dinner',
           'Overnight at hotel',
         ],
+        meals: 'Dinner',
+        accommodation: 'Luxury Dubai Hotel',
       },
       {
         day: 2,
@@ -501,6 +830,8 @@ export const tourPackages: TourPackage[] = [
           'Evening at leisure',
           'Overnight',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Luxury Dubai Hotel',
       },
       {
         day: 3,
@@ -513,6 +844,8 @@ export const tourPackages: TourPackage[] = [
           'BBQ dinner and entertainment',
           'Return to hotel',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Luxury Dubai Hotel',
       },
       {
         day: 4,
@@ -525,6 +858,8 @@ export const tourPackages: TourPackage[] = [
           'Palm Jumeirah tour',
           'Evening at leisure',
         ],
+        meals: 'Breakfast, Lunch & Dinner',
+        accommodation: 'Luxury Dubai Hotel',
       },
       {
         day: 5,
@@ -535,6 +870,7 @@ export const tourPackages: TourPackage[] = [
           'Transfer to airport',
           'Departure',
         ],
+        meals: 'Breakfast',
       },
     ],
     costBreakdown: {

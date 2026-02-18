@@ -35,7 +35,7 @@ function SearchResults() {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4" style={{borderBottomColor: '#5D0531'}}></div>
           <p className="text-gray-600">Searching tours...</p>
         </div>
       </div>
@@ -87,7 +87,7 @@ function SearchResults() {
 
                     {/* Content */}
                     <div className="p-5 flex-grow flex flex-col">
-                      <div className="text-sm text-red-600 font-semibold mb-2">{tour.category}</div>
+                      <div className="text-sm font-semibold mb-2" style={{color: '#5D0531'}}>{tour.category}</div>
                       <h3 className="text-xl font-bold text-gray-900 mb-2 line-clamp-2">{tour.title}</h3>
                       <p className="text-gray-600 text-sm mb-4 line-clamp-2 flex-grow">{tour.description}</p>
                       
@@ -96,7 +96,7 @@ function SearchResults() {
                           <span className="text-sm text-gray-500">{tour.duration}</span>
                           <span className="text-lg font-bold text-gray-900">{tour.price}</span>
                         </div>
-                        <div className="text-red-600 font-medium text-sm flex items-center gap-2">
+                        <div className="font-medium text-sm flex items-center gap-2" style={{color: '#5D0531'}}>
                           View details
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -119,7 +119,7 @@ function SearchResults() {
               Try adjusting your search criteria or browse all tours
             </p>
             <Link href="/services/tours">
-              <button className="bg-red-600 hover:bg-red-700 text-white px-6 py-3 rounded-lg font-medium transition-colors">
+              <button className="text-white px-6 py-3 rounded-lg font-medium transition-colors hover:opacity-90" style={{backgroundColor: '#5D0531'}}>
                 Browse All Tours
               </button>
             </Link>
@@ -136,7 +136,7 @@ export default function SearchPage() {
       fallback={
         <div className="min-h-screen bg-gray-50 flex items-center justify-center">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-red-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 mx-auto mb-4" style={{borderBottomColor: '#5D0531'}}></div>
             <p className="text-gray-600">Loading search...</p>
           </div>
         </div>

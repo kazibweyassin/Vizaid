@@ -83,18 +83,18 @@ export default function BlogContent() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
             >
               <Link href={`/blog/${post.id}`}>
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 hover:border-red-600 group cursor-pointer h-full flex flex-col">
-                  <div className="text-6xl mb-4 text-center bg-gray-100 rounded-lg p-8 group-hover:bg-red-50 transition-colors">
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer h-full flex flex-col" style={{borderColor: '#5D0531'}}>
+                  <div className="text-6xl mb-4 text-center bg-gray-100 rounded-lg p-8 group-hover:bg-opacity-50 transition-colors">
                     {post.image}
                   </div>
                   <div className="p-6 flex-grow flex flex-col">
-                    <div className="text-sm text-red-600 font-semibold mb-2">{post.category}</div>
-                    <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+                    <div className="text-sm font-semibold mb-2" style={{color: '#5D0531'}}>{post.category}</div>
+                    <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-opacity-70 transition-colors">
                       {post.title}
                     </h2>
                     <p className="text-gray-600 mb-4 flex-grow">{post.excerpt}</p>
                     <div className="text-sm text-gray-500 mb-4">{post.date}</div>
-                    <div className="text-red-600 font-medium inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                    <div className="font-medium inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform" style={{color: '#5D0531'}}>
                       Read more
                       <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -112,10 +112,11 @@ export default function BlogContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 bg-red-600 text-white rounded-lg p-8 md:p-12 text-center"
+          className="mt-12 text-white rounded-lg p-8 md:p-12 text-center"
+          style={{backgroundColor: '#5D0531'}}
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Stay Updated</h2>
-          <p className="text-red-100 mb-6 text-lg">
+          <p className="mb-6 text-lg opacity-90">
             Subscribe to our newsletter for travel tips, destination guides, and exclusive deals.
           </p>
           <form className="max-w-md mx-auto flex gap-2">
@@ -126,7 +127,8 @@ export default function BlogContent() {
             />
             <button
               type="submit"
-              className="bg-white text-red-600 px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+              className="text-white px-6 py-3 rounded-lg transition-colors font-medium hover:opacity-90"
+              style={{backgroundColor: 'white', color: '#5D0531'}}
             >
               Subscribe
             </button>

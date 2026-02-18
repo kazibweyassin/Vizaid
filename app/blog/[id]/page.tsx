@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   return (
     <div className="bg-white min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <Link href="/blog" className="text-red-600 hover:text-red-700 mb-6 inline-flex items-center">
+        <Link href="/blog" className="mb-6 inline-flex items-center transition-colors hover:opacity-70" style={{color: '#5D0531'}}>
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
@@ -101,7 +101,7 @@ export default async function BlogPostPage({ params }: PageProps) {
           <div className="text-6xl mb-6 text-center bg-gray-100 rounded-lg p-8">
             {post.image}
           </div>
-          <div className="text-sm text-red-600 font-semibold mb-4">{post.category}</div>
+          <div className="text-sm font-semibold mb-4" style={{color: '#5D0531'}}>{post.category}</div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{post.title}</h1>
           <div className="text-sm text-gray-500 mb-8">{post.date}</div>
           

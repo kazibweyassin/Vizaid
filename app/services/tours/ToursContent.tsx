@@ -54,7 +54,7 @@ export default function ToursContent() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link href={category.href}>
-                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:border-red-600 group cursor-pointer h-full flex flex-col">
+                <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-xl transition-all duration-300 group cursor-pointer h-full flex flex-col" style={{borderColor: '#5D0531'}}>
                   {/* Image */}
                   <div className="relative h-64 overflow-hidden">
                     <Image
@@ -78,13 +78,13 @@ export default function ToursContent() {
                     <div className="space-y-3 mb-6">
                       {category.features.map((feature) => (
                         <div key={feature} className="text-sm text-gray-700 flex items-center">
-                          <span className="text-red-600 mr-3 font-bold">✓</span>
+                          <span className="mr-3 font-bold" style={{color: '#5D0531'}}>✓</span>
                           {feature}
                         </div>
                       ))}
                     </div>
                     <div className="mt-auto">
-                      <div className="text-red-600 font-medium inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+                      <div className="font-medium inline-flex items-center gap-2 group-hover:translate-x-2 transition-transform" style={{color: '#5D0531'}}>
                         Explore {category.title}
                         <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -111,8 +111,8 @@ export default function ToursContent() {
               transition={{ duration: 0.6 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: 'rgba(93, 5, 49, 0.1)'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#5D0531'}}>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
               </div>
@@ -128,8 +128,8 @@ export default function ToursContent() {
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: 'rgba(93, 5, 49, 0.1)'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#5D0531'}}>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
                 </svg>
               </div>
@@ -145,8 +145,8 @@ export default function ToursContent() {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-center"
             >
-              <div className="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <svg className="w-8 h-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" style={{backgroundColor: 'rgba(93, 5, 49, 0.1)'}}>
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" style={{color: '#5D0531'}}>
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
                 </svg>
               </div>

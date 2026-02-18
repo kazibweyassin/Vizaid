@@ -90,7 +90,7 @@ export default function VisaAssistanceContent() {
                     className="flex"
                   >
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                      <div className="w-12 h-12 text-white rounded-full flex items-center justify-center font-bold text-lg" style={{backgroundColor: '#5D0531'}}>
                         {process.step}
                       </div>
                     </div>
@@ -113,10 +113,11 @@ export default function VisaAssistanceContent() {
               {supportedCountries.map((country) => (
                 <div
                   key={country}
-                  className="p-3 bg-gray-50 rounded-lg hover:bg-red-50 hover:border-red-200 border border-transparent transition-colors"
+                  className="p-3 rounded-lg border border-transparent transition-colors"
+                  style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)'}}
                 >
                   <div className="flex items-center">
-                    <span className="text-red-600 mr-2">🛂</span>
+                    <span className="mr-2" style={{color: '#5D0531'}}>🛂</span>
                     <span className="text-gray-700 text-sm">{country}</span>
                   </div>
                 </div>
@@ -129,13 +130,13 @@ export default function VisaAssistanceContent() {
             <ul className="space-y-3">
               {requiredDocuments.map((doc, index) => (
                 <li key={index} className="flex items-start">
-                  <span className="text-red-600 mr-2 font-bold">✓</span>
+                  <span className="mr-2 font-bold" style={{color: '#5D0531'}}>✓</span>
                   <span className="text-gray-700">{doc}</span>
                 </li>
               ))}
             </ul>
-            <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-lg">
-              <p className="text-sm text-red-900">
+            <div className="mt-6 p-4 rounded-lg" style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)', border: '1px solid rgba(93, 5, 49, 0.2)'}}>
+              <p className=\"text-sm\" style={{color: '#5D0531'}}>
                 <strong>Note:</strong> Document requirements may vary by destination and visa type.
                 Our team will provide you with a complete checklist based on your specific needs.
               </p>

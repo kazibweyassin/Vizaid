@@ -17,9 +17,9 @@ export default function Button({
   const baseStyles = 'font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2';
   
   const variants = {
-    primary: 'bg-red-600 text-white hover:bg-red-700 focus:ring-red-500',
+    primary: 'text-white hover:opacity-90 focus:ring-opacity-50',
     secondary: 'bg-gray-600 text-white hover:bg-gray-700 focus:ring-gray-500',
-    outline: 'border-2 border-red-600 text-red-600 hover:bg-red-50 focus:ring-red-500',
+    outline: 'border-2 text-white hover:opacity-90 focus:ring-opacity-50',
   };
   
   const sizes = {
@@ -28,9 +28,13 @@ export default function Button({
     lg: 'px-8 py-3 text-lg',
   };
 
+  const primaryStyle = variant === 'primary' ? { backgroundColor: '#5D0531' } : undefined;
+  const outlineStyle = variant === 'outline' ? { borderColor: '#5D0531', color: '#5D0531' } : undefined;
+
   return (
     <button
       className={cn(baseStyles, variants[variant], sizes[size], className)}
+      style={variant === 'primary' ? primaryStyle : variant === 'outline' ? outlineStyle : undefined}
       {...props}
     >
       {children}

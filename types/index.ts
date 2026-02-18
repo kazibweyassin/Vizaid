@@ -62,11 +62,20 @@ export interface ItineraryDay {
   day: number;
   title: string;
   activities: string[];
+  meals?: string;
+  accommodation?: string;
 }
 
 export interface CostBreakdown {
   included: string[];
   excluded: string[];
+}
+
+export interface PricingTier {
+  name: string;
+  pricePerPerson: number;
+  description?: string;
+  features?: string[];
 }
 
 export interface TourPackage {
@@ -75,13 +84,24 @@ export interface TourPackage {
   destination: string;
   duration: string;
   price: string;
+  pricingTiers?: PricingTier[];
   image: string;
+  galleryImages?: string[];
   description: string;
   highlights: string[];
   type: 'international' | 'domestic';
   category: string;
+  difficulty?: 'Easy' | 'Moderate' | 'Challenging';
+  bestTimeToVisit?: string;
+  groupSize?: string;
+  maxAltitude?: string;
+  physicalRequirements?: string;
+  whyChooseThis?: string[];
   itinerary?: ItineraryDay[];
   costBreakdown?: CostBreakdown;
+  rating?: number;
+  reviewCount?: number;
+  seasonalInfo?: string;
 }
 
 export interface Service {

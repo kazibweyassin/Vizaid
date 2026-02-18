@@ -29,7 +29,7 @@ export default function WhatSetsUsApart() {
               worldwide. We're proud to be a licensed travel agent and member of TUGATA, committed to sustainable and responsible tourism.
             </p>
             <Link href="/about">
-              <Button variant="primary" size="lg" className="bg-red-600 hover:bg-red-700">
+              <Button variant="primary" size="lg">
                 Read about our purpose
               </Button>
             </Link>

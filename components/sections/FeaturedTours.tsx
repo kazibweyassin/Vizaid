@@ -24,7 +24,7 @@ export default function FeaturedTours() {
         {/* Navigation Bar */}
         <div className="flex justify-between items-center mb-8 border-b border-gray-200 pb-4">
           <div className="flex gap-8">
-            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 border-b-2 border-red-600 pb-4 -mb-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 border-b-2 pb-4 -mb-4" style={{borderColor: '#5D0531'}}>
               Only Vizaid experiences
             </h2>
             <button className="text-gray-600 hover:text-gray-900 transition-colors font-medium text-sm hidden md:block">

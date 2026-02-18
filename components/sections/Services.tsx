@@ -71,11 +71,11 @@ export default function Services() {
               transition={{ duration: 0.6, delay: index * 0.1 }}
             >
               <Link href={service.href}>
-                <div className="bg-white border border-gray-200 rounded-lg p-8 h-full hover:shadow-lg transition-all duration-300 hover:border-red-600 group cursor-pointer">
-                  <div className="text-red-600 mb-6 group-hover:scale-110 transition-transform duration-300">
+                <div className="bg-white border border-gray-200 rounded-lg p-8 h-full hover:shadow-lg transition-all duration-300 group cursor-pointer" style={{borderColor: '#5D0531'}}>
+                  <div className="mb-6 group-hover:scale-110 transition-transform duration-300" style={{color: '#5D0531'}}>
                     {service.icon}
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-red-600 transition-colors">
+                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-opacity-70 transition-colors">
                     {service.title}
                   </h3>
                   <p className="text-gray-600 mb-6 leading-relaxed">
@@ -84,12 +84,12 @@ export default function Services() {
                   <ul className="space-y-3 mb-6">
                     {service.features.map((feature) => (
                       <li key={feature} className="text-sm text-gray-700 flex items-center">
-                        <span className="text-red-600 mr-3 font-bold">✓</span>
+                        <span className="mr-3 font-bold" style={{color: '#5D0531'}}>✓</span>
                         {feature}
                       </li>
                     ))}
                   </ul>
-                  <div className="text-red-600 font-medium mt-6 group-hover:translate-x-2 transition-transform inline-flex items-center gap-2">
+                  <div className="font-medium mt-6 group-hover:translate-x-2 transition-transform inline-flex items-center gap-2" style={{color: '#5D0531'}}>
                     Learn more
                     <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

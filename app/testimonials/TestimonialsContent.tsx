@@ -114,7 +114,7 @@ export default function TestimonialsContent() {
                       </svg>
                     ))}
                   </div>
-                  <span className="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">
+                  <span className="px-3 py-1 rounded-full text-xs font-semibold" style={{backgroundColor: 'rgba(93, 5, 49, 0.1)', color: '#5D0531'}}>
                     {serviceLabels[testimonial.service]}
                   </span>
                 </div>
@@ -135,22 +135,25 @@ export default function TestimonialsContent() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-12 bg-red-600 text-white rounded-lg p-8 md:p-12 text-center"
+          className="mt-12 text-white rounded-lg p-8 md:p-12 text-center"
+          style={{backgroundColor: '#5D0531'}}
         >
           <h2 className="text-2xl md:text-3xl font-bold mb-4">Ready to Experience Our Service?</h2>
-          <p className="text-red-100 mb-6 text-lg">
+          <p className="mb-6 text-lg opacity-90">
             Join our satisfied customers and let us help you with your travel needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/contact"
-              className="bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+              className="bg-white px-8 py-3 rounded-lg transition-colors font-medium hover:opacity-90"
+              style={{color: '#5D0531'}}
             >
               Contact Us
             </Link>
             <Link
               href="/services/air-ticketing"
-              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-red-600 transition-colors font-medium"
+              className="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white transition-colors font-medium hover:opacity-90"
+              style={{color: 'white'}}
             >
               Book Now
             </Link>
