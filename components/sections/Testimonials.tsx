@@ -41,50 +41,48 @@ const testimonials: Testimonial[] = [
 
 export default function Testimonials() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-[#f5f5f0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          transition={{ duration: 0.7 }}
+          className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="text-5xl md:text-6xl font-extrabold text-gray-900 mb-8 tracking-tight">
             What Our Customers Say
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Don't just take our word for it - hear from our satisfied customers
+          <p className="text-2xl text-gray-600 max-w-2xl mx-auto">
+            Don't just take our word for it – hear from our satisfied travelers.
           </p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
           {testimonials.map((testimonial, index) => (
             <motion.div
               key={testimonial.id}
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.7, delay: index * 0.1 }}
+              className="bg-white rounded-2xl shadow-xl p-10 flex flex-col justify-between h-full"
             >
-              <Card>
-                <div className="flex items-center mb-4">
-                  <div className="flex text-yellow-400">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                        <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.564-.955L10 0l2.947 5.955 6.564.955-4.756 4.635 1.123 6.545z" />
-                      </svg>
-                    ))}
-                  </div>
+              <div className="flex items-center mb-6">
+                <div className="flex text-yellow-400">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg key={i} className="w-6 h-6 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.564-.955L10 0l2.947 5.955 6.564.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
                 </div>
-                <p className="text-gray-700 mb-4 italic">"{testimonial.comment}"</p>
-                <div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  {testimonial.location && (
-                    <div className="text-sm text-gray-500">{testimonial.location}</div>
-                  )}
-                </div>
-              </Card>
+              </div>
+              <p className="text-gray-700 mb-6 text-xl italic">"{testimonial.comment}"</p>
+              <div>
+                <div className="font-bold text-gray-900 text-lg">{testimonial.name}</div>
+                {testimonial.location && (
+                  <div className="text-base text-gray-500">{testimonial.location}</div>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>

@@ -44,58 +44,42 @@ const services = [
 
 export default function Services() {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-[#f5f5f0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-14"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Ways to Travel
-          </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Comprehensive travel solutions tailored to your needs
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-tight">Ways to Travel</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Comprehensive travel solutions tailored to your needs. Air ticketing, visa assistance, and unforgettable tours.
           </p>
         </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
           {services.map((service, index) => (
             <motion.div
               key={service.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white border border-gray-200 rounded-2xl p-10 shadow-xl flex flex-col items-center text-center hover:shadow-2xl transition-shadow duration-300"
             >
+              <div className="mb-8">{service.icon}</div>
+              <h3 className="text-3xl font-extrabold text-gray-900 mb-3 tracking-tight">{service.title}</h3>
+              <p className="text-gray-700 mb-6 text-lg">{service.description}</p>
+              <ul className="mb-8 text-gray-600 text-base">
+                {service.features.map((feature) => (
+                  <li key={feature} className="mb-2">{feature}</li>
+                ))}
+              </ul>
               <Link href={service.href}>
-                <div className="bg-white border border-gray-200 rounded-lg p-8 h-full hover:shadow-lg transition-all duration-300 group cursor-pointer" style={{borderColor: '#5D0531'}}>
-                  <div className="mb-6 group-hover:scale-110 transition-transform duration-300" style={{color: '#5D0531'}}>
-                    {service.icon}
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-opacity-70 transition-colors">
-                    {service.title}
-                  </h3>
-                  <p className="text-gray-600 mb-6 leading-relaxed">
-                    {service.description}
-                  </p>
-                  <ul className="space-y-3 mb-6">
-                    {service.features.map((feature) => (
-                      <li key={feature} className="text-sm text-gray-700 flex items-center">
-                        <span className="mr-3 font-bold" style={{color: '#5D0531'}}>✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="font-medium mt-6 group-hover:translate-x-2 transition-transform inline-flex items-center gap-2" style={{color: '#5D0531'}}>
-                    Learn more
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </div>
-                </div>
+                <button className="bg-[#5D0531] text-white font-bold px-7 py-3 rounded-lg shadow-lg hover:bg-[#7a1c4b] transition-colors text-lg">
+                  Learn More
+                </button>
               </Link>
             </motion.div>
           ))}

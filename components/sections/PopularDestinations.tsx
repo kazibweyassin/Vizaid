@@ -39,18 +39,17 @@ const destinations = [
 
 export default function PopularDestinations() {
   return (
-    <section className="py-16 bg-white">
+    <section className="py-20 bg-[#f5f5f0]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900">Popular Destinations</h2>
+        <div className="flex justify-between items-center mb-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Popular Destinations</h2>
           <Link href="/services/tours">
-            <button className="border border-gray-300 hover:border-gray-900 text-gray-900 px-6 py-2 rounded-lg font-medium transition-colors">
+            <button className="border border-gray-300 hover:border-gray-900 text-gray-900 px-6 py-2 rounded-lg font-semibold transition-colors shadow-md">
               Search all destinations
             </button>
           </Link>
         </div>
-
-        <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4">
+        <div className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4">
           {destinations.map((destination, index) => (
             <motion.div
               key={destination.name}
@@ -61,19 +60,20 @@ export default function PopularDestinations() {
               className="flex-shrink-0"
             >
               <Link href={destination.href}>
-                <div className="relative w-64 h-80 rounded-lg overflow-hidden group cursor-pointer">
+                <div className="relative w-80 h-[420px] rounded-2xl overflow-hidden shadow-xl group cursor-pointer">
                   <Image
                     src={destination.image}
                     alt={destination.name}
                     fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="bg-white px-8 py-3 rounded-full shadow-sm">
-                      <span className="text-gray-900 font-semibold text-base">{destination.name}</span>
-                    </div>
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-8">
+                    <h3 className="text-3xl font-extrabold text-white mb-3 drop-shadow-lg tracking-tight">{destination.name}</h3>
+                    <button className="bg-white text-gray-900 font-bold px-5 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-lg">
+                      Explore
+                    </button>
                   </div>
                 </div>
               </Link>

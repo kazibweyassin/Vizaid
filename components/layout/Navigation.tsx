@@ -3,9 +3,13 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
+import { tourPackages } from '@/lib/tours-data';
+import QuickViewModal from '@/components/ui/QuickViewModal';
+import type { TourPackage } from '@/types';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [quickViewTour, setQuickViewTour] = useState<TourPackage | null>(null);
 
   const navLinks = [
     { href: '/services/tours', label: 'Destinations' },
@@ -34,6 +38,81 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
+            {/* Domestic dropdown */}
+            <div className="relative group">
+              <button className="text-gray-800 transition-colors font-medium text-sm hover:opacity-70 inline-flex items-center gap-2">
+                Domestic
+                <svg className="w-3 h-3" viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M6 8l4 4 4-4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+
+              <div className="absolute left-0 mt-3 w-80 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transform scale-95 group-hover:scale-100 transition-all">
+                <div className="p-3">
+                  <div className="grid grid-cols-1 gap-2">
+                    {tourPackages.filter(t => t.type === 'domestic').slice(0,8).map((t) => (
+                      <button
+                        key={t.id}
+                        onClick={() => { setQuickViewTour(t as TourPackage); setIsOpen(false); }}
+                        className="w-full text-left flex items-center gap-3 p-2 rounded hover:bg-gray-50"
+                        aria-haspopup="dialog"
+                        aria-label={`Quick view ${t.title}`}
+                      >
+                        {t.image ? (
+                          <Image src={t.image} alt={t.title} width={64} height={44} className="rounded object-cover" />
+                        ) : (
+                          <div className="w-16 h-10 bg-gray-100 rounded" />
+                        )}
+                        <div className="text-sm">
+                          <div className="font-semibold text-gray-800">{t.title}</div>
+                          <div className="text-xs text-gray-500">{t.duration} • {t.destination}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="mt-3 pt-2 border-t">
+                    <Link href="/services/tours?type=domestic" className="text-sm font-medium text-rose-700">View all domestic packages →</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* International dropdown */}
+            <div className="relative group">
+              <button className="text-gray-800 transition-colors font-medium text-sm hover:opacity-70 inline-flex items-center gap-2">
+                International
+                <svg className="w-3 h-3" viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M6 8l4 4 4-4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </button>
+
+              <div className="absolute left-0 mt-3 w-80 bg-white rounded-lg shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transform scale-95 group-hover:scale-100 transition-all">
+                <div className="p-3">
+                  <div className="grid grid-cols-1 gap-2">
+                    {tourPackages.filter(t => t.type === 'international').slice(0,8).map((t) => (
+                      <button
+                        key={t.id}
+                        onClick={() => { setQuickViewTour(t as TourPackage); setIsOpen(false); }}
+                        className="w-full text-left flex items-center gap-3 p-2 rounded hover:bg-gray-50"
+                        aria-haspopup="dialog"
+                        aria-label={`Quick view ${t.title}`}
+                      >
+                        {t.image ? (
+                          <Image src={t.image} alt={t.title} width={64} height={44} className="rounded object-cover" />
+                        ) : (
+                          <div className="w-16 h-10 bg-gray-100 rounded" />
+                        )}
+                        <div className="text-sm">
+                          <div className="font-semibold text-gray-800">{t.title}</div>
+                          <div className="text-xs text-gray-500">{t.duration} • {t.destination}</div>
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                  <div className="mt-3 pt-2 border-t">
+                    <Link href="/services/tours?type=international" className="text-sm font-medium text-rose-700">View all international packages →</Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Existing nav links (kept) */}
             {navLinks.map((link, index) => (
               <Link
                 key={`${link.href}-${link.label}-${index}`}
@@ -94,8 +173,35 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Mobile: Domestic list */}
+            <div className="pt-3 border-t">
+              <div className="text-xs font-semibold text-gray-500 uppercase mb-2">Domestic Packages</div>
+              {tourPackages.filter(t => t.type === 'domestic').slice(0,6).map((t) => (
+                <Link key={t.id} href={`/services/tours/${t.id}`} className="block py-2 text-gray-700 hover:text-gray-900" onClick={() => setIsOpen(false)}>
+                  {t.title}
+                </Link>
+              ))}
+              <Link href="/services/tours?type=domestic" className="block py-2 text-rose-700 font-medium" onClick={() => setIsOpen(false)}>See all domestic →</Link>
+            </div>
+
+            {/* Mobile: International list */}
+            <div className="pt-3 border-t">
+              <div className="text-xs font-semibold text-gray-500 uppercase mb-2">International Packages</div>
+              {tourPackages.filter(t => t.type === 'international').slice(0,6).map((t) => (
+                <Link key={t.id} href={`/services/tours/${t.id}`} className="block py-2 text-gray-700 hover:text-gray-900" onClick={() => setIsOpen(false)}>
+                  {t.title}
+                </Link>
+              ))}
+              <Link href="/services/tours?type=international" className="block py-2 text-rose-700 font-medium" onClick={() => setIsOpen(false)}>See all international →</Link>
+            </div>
           </div>
         </div>
+      )}
+
+      {/* Quick view modal */}
+      {quickViewTour && (
+        <QuickViewModal tour={quickViewTour} onClose={() => setQuickViewTour(null)} />
       )}
     </nav>
   );

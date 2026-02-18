@@ -53,47 +53,28 @@ export default function FeaturedTours() {
               className="flex-shrink-0"
             >
               <Link href={`/services/tours/${tour.id}`}>
-                <div className="relative w-80 bg-white rounded-lg overflow-hidden group cursor-pointer shadow-sm hover:shadow-lg transition-shadow">
+                <div className="relative w-96 bg-white rounded-2xl overflow-hidden group cursor-pointer shadow-xl hover:shadow-2xl transition-shadow">
                   {/* Image */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-72 overflow-hidden">
                     {tour.image ? (
                       <Image
                         src={tour.image}
                         alt={tour.title}
                         fill
-                        className="object-cover group-hover:scale-110 transition-transform duration-300"
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
                         unoptimized
                       />
                     ) : (
-                      <div className="w-full h-full flex items-center justify-center bg-gray-200">
-                        <span className="text-4xl">🌍</span>
-                      </div>
+                      <div className="bg-gray-200 h-full w-full" />
                     )}
-                    {/* Overlay Text */}
-                    <div className="absolute top-4 left-4">
-                      <div className="bg-white/95 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
-                        <span className="text-gray-900 font-semibold text-sm">
-                          {overlayTexts[index] || tour.title}
-                        </span>
-                      </div>
-                    </div>
                   </div>
-
-                  {/* Content */}
-                  <div className="p-5">
-                    <div className="text-sm text-gray-500 mb-2">{tour.duration}</div>
-                    <h3 className="text-lg font-bold text-gray-900 mb-3 line-clamp-2">
-                      {tour.title}
-                    </h3>
-                    <div className="flex justify-between items-center">
-                      <div>
-                        {tour.price.includes('From') ? (
-                          <div className="text-lg font-bold text-gray-900">{tour.price}</div>
-                        ) : (
-                          <div className="text-lg font-bold text-gray-900">From {tour.price}</div>
-                        )}
-                      </div>
-                    </div>
+                  {/* Overlay Text */}
+                  <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent p-8">
+                    <h3 className="text-2xl font-extrabold text-white mb-3 drop-shadow-lg tracking-tight">{tour.title}</h3>
+                    <p className="text-white text-lg mb-3">{overlayTexts[index]}</p>
+                    <button className="bg-white text-gray-900 font-bold px-5 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-lg">
+                      View Details
+                    </button>
                   </div>
                 </div>
               </Link>
@@ -104,3 +85,4 @@ export default function FeaturedTours() {
     </section>
   );
 }
+
