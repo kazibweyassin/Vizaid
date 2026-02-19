@@ -61,7 +61,7 @@ export default async function TourDetailPage({ params }: PageProps) {
     <div className="bg-[var(--background)] min-h-screen">
       {/* Hero Section with Breadcrumb */}
       <div className="text-white py-12" style={{background: 'linear-gradient(to right, #5D0531, rgba(93, 5, 49, 0.8))'}}>
-        <div className="w-full">
+        <div className="max-w-7xl mx-auto px-4 md:px-8">
           <div className="text-sm font-semibold mb-3 opacity-90">
             <Link href="/services/tours" className="hover:opacity-70">Tours</Link> / {tour.category}
           </div>
@@ -74,7 +74,7 @@ export default async function TourDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      <div className="w-full py-12">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
@@ -97,7 +97,7 @@ export default async function TourDetailPage({ params }: PageProps) {
                 )}
               </div>
               {tour.galleryImages && tour.galleryImages.length > 0 && (
-                <div className="grid grid-cols-4 gap-2 p-4 bg-gray-50">
+                <div className="grid grid-cols-4 gap-2 p-4" style={{ background: 'rgba(255,255,255,0.03)' }}>
                   {tour.galleryImages.slice(1, 5).map((img, idx) => (
                     <div key={idx} className="relative h-24 bg-gray-200 rounded overflow-hidden cursor-pointer hover:opacity-75">
                       <Image
@@ -116,10 +116,10 @@ export default async function TourDetailPage({ params }: PageProps) {
             {/* Quick Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <Card className="text-center">
-                <div className="text-3xl font-bold mb-2" style={{color: '#5D0531'}}>
+                <div className="text-3xl font-bold mb-2" style={{color: '#C9973A'}}>
                   {tour.duration.split('/')[0].trim()}
                 </div>
-                <div className="text-sm text-gray-600">Duration</div>
+                <div className="text-sm text-white/55">Duration</div>
               </Card>
               {tour.difficulty && (
                 <Card className="text-center">
@@ -128,19 +128,19 @@ export default async function TourDetailPage({ params }: PageProps) {
                       <span key={i} style={{color: difficultyInfo.color}}>●</span>
                     ))}
                   </div>
-                  <div className="text-sm text-gray-600">{difficulty}</div>
-                </Card>
+                <div className="text-sm text-white/55">{difficulty}</div>
+              </Card>
               )}
               {tour.groupSize && (
                 <Card className="text-center">
                   <div className="text-xl font-bold mb-2">👥</div>
-                  <div className="text-sm text-gray-600 line-clamp-2">{tour.groupSize.split('(')[0].trim()}</div>
+                  <div className="text-sm text-white/55 line-clamp-2">{tour.groupSize.split('(')[0].trim()}</div>
                 </Card>
               )}
               {tour.maxAltitude && (
                 <Card className="text-center">
                   <div className="text-lg font-bold mb-2">⛰️</div>
-                  <div className="text-sm text-gray-600">{tour.maxAltitude.split('(')[0].trim()}</div>
+                  <div className="text-sm text-white/55">{tour.maxAltitude.split('(')[0].trim()}</div>
                 </Card>
               )}
             </div>
@@ -156,7 +156,7 @@ export default async function TourDetailPage({ params }: PageProps) {
               <h2 className="text-2xl font-bold text-white mb-6">Tour Highlights</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {tour.highlights.map((highlight, index) => (
-                  <div key={index} className="flex items-start p-3 rounded border border-gray-100 hover:border-green-300 transition">
+                  <div key={index} className="flex items-start p-3 rounded border border-white/10 hover:border-[rgba(201,151,58,0.4)] transition">
                     <span className="mr-3 mt-1 text-lg" style={{color: '#707E64'}}>✓</span>
                     <span className="text-gray-300">{highlight}</span>
                   </div>
@@ -218,8 +218,8 @@ export default async function TourDetailPage({ params }: PageProps) {
             {tour.physicalRequirements && (
               <Card variant="premium">
                 <h2 className="text-2xl font-bold text-white mb-4">Physical Requirements & Fitness Level</h2>
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
-                  <p className="text-gray-700 leading-relaxed">{tour.physicalRequirements}</p>
+                <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12 }} className="p-6">
+                  <p className="text-white/75 leading-relaxed">{tour.physicalRequirements}</p>
                 </div>
               </Card>
             )}
@@ -229,14 +229,14 @@ export default async function TourDetailPage({ params }: PageProps) {
               <Card variant="premium">
                 <h2 className="text-2xl font-bold text-white mb-4">Best Time to Visit</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-                    <h3 className="font-bold text-gray-900 mb-2">🌤️ Recommended Season</h3>
-                    <p className="text-gray-700">{tour.bestTimeToVisit}</p>
+                  <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12 }} className="p-6">
+                    <h3 className="font-bold text-white mb-2">🌤️ Recommended Season</h3>
+                    <p className="text-white/75">{tour.bestTimeToVisit}</p>
                   </div>
                   {tour.seasonalInfo && (
-                    <div className="bg-amber-50 border border-amber-200 rounded-lg p-6">
-                      <h3 className="font-bold text-gray-900 mb-2">📅 Seasonal Details</h3>
-                      <p className="text-gray-700">{tour.seasonalInfo}</p>
+                    <div style={{ background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: 12 }} className="p-6">
+                      <h3 className="font-bold text-white mb-2">📅 Seasonal Details</h3>
+                      <p className="text-white/75">{tour.seasonalInfo}</p>
                     </div>
                   )}
                 </div>
@@ -251,16 +251,16 @@ export default async function TourDetailPage({ params }: PageProps) {
                   {tour.pricingTiers.map((tier, idx) => (
                     <div
                       key={idx}
-                      className="border-2 rounded-lg p-6 transition hover:shadow-lg"
-                      style={{borderColor: idx === 1 ? '#5D0531' : '#e5e7eb'}}
+                      className="rounded-xl p-6 transition hover:shadow-lg"
+                      style={{ border: idx === 1 ? '2px solid #5D0531' : '1px solid rgba(255,255,255,0.1)', background: 'rgba(255,255,255,0.03)' }}
                     >
                       {idx === 1 && (
                         <div className="mb-3">
-                          <span className="bg-green-100 text-green-800 text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
+                          <span style={{ background: 'rgba(201,151,58,0.2)', color: '#C9973A' }} className="text-xs font-bold px-3 py-1 rounded-full">MOST POPULAR</span>
                         </div>
                       )}
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">{tier.name}</h3>
-                      <p className="text-sm text-gray-600 mb-4 min-h-12">{tier.description}</p>
+                      <h3 className="text-xl font-bold text-white mb-2">{tier.name}</h3>
+                      <p className="text-sm text-white/60 mb-4 min-h-12">{tier.description}</p>
                       <div className="mb-4">
                         <span className="text-3xl font-bold" style={{color: '#5D0531'}}>
                           ${tier.pricePerPerson}
@@ -270,8 +270,8 @@ export default async function TourDetailPage({ params }: PageProps) {
                       {tier.features && (
                         <ul className="space-y-2 mb-6">
                           {tier.features.map((feature, fidx) => (
-                            <li key={fidx} className="text-sm text-gray-700 flex items-start">
-                              <span className="mr-2" style={{color: '#707E64'}}>✓</span>
+                            <li key={fidx} className="text-sm text-white/75 flex items-start">
+                              <span className="mr-2" style={{color: '#C9973A'}}>✓</span>
                               <span>{feature}</span>
                             </li>
                           ))}
@@ -286,17 +286,17 @@ export default async function TourDetailPage({ params }: PageProps) {
             {/* Cost Breakdown */}
             {tour.costBreakdown && (
               <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Cost Breakdown</h2>
+                <h2 className="text-2xl font-bold text-white mb-6">Cost Breakdown</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div>
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-lg font-bold" style={{color: '#707E64'}}>✓</span>
-                      <h3 className="text-lg font-semibold text-gray-900">What's Included</h3>
+                      <h3 className="text-lg font-semibold text-white">What's Included</h3>
                     </div>
                     <ul className="space-y-3">
                       {tour.costBreakdown.included.map((item, index) => (
-                        <li key={index} className="text-gray-700 flex items-start">
-                          <span className="text-green-600 mr-2 mt-1 font-bold">+</span>
+                        <li key={index} className="text-white/75 flex items-start">
+                          <span className="text-green-400 mr-2 mt-1 font-bold">+</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -305,12 +305,12 @@ export default async function TourDetailPage({ params }: PageProps) {
                   <div>
                     <div className="flex items-center gap-2 mb-4">
                       <span className="text-lg font-bold" style={{color: '#5D0531'}}>✗</span>
-                      <h3 className="text-lg font-semibold text-gray-900">What's Not Included</h3>
+                      <h3 className="text-lg font-semibold text-white">What's Not Included</h3>
                     </div>
                     <ul className="space-y-3">
                       {tour.costBreakdown.excluded.map((item, index) => (
-                        <li key={index} className="text-gray-700 flex items-start">
-                          <span className="mr-2 mt-1" style={{color: '#5D0531'}}>−</span>
+                        <li key={index} className="text-white/75 flex items-start">
+                          <span className="mr-2 mt-1" style={{color: '#C9973A'}}>−</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -327,7 +327,7 @@ export default async function TourDetailPage({ params }: PageProps) {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {relatedTours.map((relatedTour) => (
                     <Link key={relatedTour.id} href={`/services/tours/${relatedTour.id}`}>
-                      <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer h-full bg-white">
+                      <div style={{ background: '#0f1923', border: '1px solid rgba(255,255,255,0.1)' }} className="rounded-xl overflow-hidden hover:border-[rgba(201,151,58,0.3)] transition cursor-pointer h-full">
                         <div className="relative h-40 bg-gray-200">
                           {relatedTour.image && (
                             <Image
@@ -340,11 +340,11 @@ export default async function TourDetailPage({ params }: PageProps) {
                           )}
                         </div>
                         <div className="p-4">
-                          <h3 className="font-bold text-gray-900 mb-1 line-clamp-2">{relatedTour.title}</h3>
-                          <p className="text-sm text-gray-600 mb-3">{relatedTour.destination}</p>
+                          <h3 className="font-bold text-white mb-1 line-clamp-2">{relatedTour.title}</h3>
+                          <p className="text-sm text-white/55 mb-3">{relatedTour.destination}</p>
                           <div className="flex justify-between items-center">
-                            <span className="text-sm font-semibold" style={{color: '#5D0531'}}>{relatedTour.duration}</span>
-                            <span className="font-bold">{relatedTour.price}</span>
+                            <span className="text-sm font-semibold" style={{color: '#C9973A'}}>{relatedTour.duration}</span>
+                            <span className="font-bold text-white">{relatedTour.price}</span>
                           </div>
                         </div>
                       </div>
@@ -357,8 +357,8 @@ export default async function TourDetailPage({ params }: PageProps) {
             {/* Inquiry Form */}
             <div id="inquiry-form">
               <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-2">Ready to Book?</h2>
-                <p className="text-gray-600 mb-6">Send us your details and we'll get back to you with a customized quote</p>
+                <h2 className="text-2xl font-bold text-white mb-2">Ready to Book?</h2>
+                <p className="text-white/65 mb-6">Send us your details and we&apos;ll get back to you with a customized quote</p>
                 <TourForm tourType={tour.type} />
               </Card>
             </div>
@@ -369,28 +369,28 @@ export default async function TourDetailPage({ params }: PageProps) {
             <div className="sticky top-24 space-y-4">
               {/* Main Booking Card */}
               <Card className="border-2 border-[#5D0531]">
-                <div className="text-center mb-6 pb-6 border-b border-gray-200">
-                  <div className="text-sm text-gray-600 mb-2">From</div>
+                <div className="text-center mb-6 pb-6 border-b border-white/10">
+                  <div className="text-sm text-white/55 mb-2">From</div>
                   <div className="text-4xl font-bold mb-1" style={{color: '#5D0531'}}>
                     ${tour.pricingTiers?.[0]?.pricePerPerson || tour.price.replace(/[^\d]/g, '')}
                   </div>
-                  <div className="text-sm text-gray-600">per person</div>
+                  <div className="text-sm text-white/55">per person</div>
                 </div>
 
                 <div className="space-y-4 mb-6">
                   <div>
-                    <div className="text-xs font-semibold text-gray-600 uppercase mb-1">Duration</div>
-                    <div className="font-semibold text-gray-900">{tour.duration}</div>
+                    <div className="text-xs font-semibold text-white/45 uppercase mb-1">Duration</div>
+                    <div className="font-semibold text-white">{tour.duration}</div>
                   </div>
                   <div>
-                    <div className="text-xs font-semibold text-gray-600 uppercase mb-1">Destination</div>
-                    <div className="font-semibold text-gray-900">{tour.destination}</div>
+                    <div className="text-xs font-semibold text-white/45 uppercase mb-1">Destination</div>
+                    <div className="font-semibold text-white">{tour.destination}</div>
                   </div>
                   {tour.difficulty && (
                     <div>
-                      <div className="text-xs font-semibold text-gray-600 uppercase mb-1">Difficulty</div>
+                      <div className="text-xs font-semibold text-white/45 uppercase mb-1">Difficulty</div>
                       <div className="flex items-center gap-2">
-                        <span className="font-semibold text-gray-900">{tour.difficulty}</span>
+                        <span className="font-semibold text-white">{tour.difficulty}</span>
                         <span className="flex gap-0.5">
                           {[...Array(tour.difficulty === 'Easy' ? 1 : tour.difficulty === 'Moderate' ? 2 : 3)].map((_, i) => (
                             <span key={i} style={{color: difficultyInfo.color}}>●</span>
@@ -415,32 +415,32 @@ export default async function TourDetailPage({ params }: PageProps) {
 
               {/* Info Cards */}
               <Card>
-                <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <span style={{color: '#707E64'}}>📋</span> What We Offer
+                <h3 className="font-bold text-white mb-4 flex items-center gap-2">
+                  <span style={{color: '#C9973A'}}>📋</span> What We Offer
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start text-sm">
-                    <span className="mr-2 mt-1" style={{color: '#707E64'}}>✓</span>
-                    <span className="text-gray-700">Flexible dates</span>
+                    <span className="mr-2 mt-1" style={{color: '#C9973A'}}>✓</span>
+                    <span className="text-white/75">Flexible dates</span>
                   </li>
                   <li className="flex items-start text-sm">
                     <span className="mr-2 mt-1" style={{color: '#707E64'}}>✓</span>
-                    <span className="text-gray-700">Expert guides</span>
+                    <span className="text-white/75">Expert guides</span>
                   </li>
                   <li className="flex items-start text-sm">
-                    <span className="mr-2 mt-1" style={{color: '#707E64'}}>✓</span>
-                    <span className="text-gray-700">Small groups</span>
+                    <span className="mr-2 mt-1" style={{color: '#C9973A'}}>✓</span>
+                    <span className="text-white/75">Small groups</span>
                   </li>
                   <li className="flex items-start text-sm">
-                    <span className="mr-2 mt-1" style={{color: '#707E64'}}>✓</span>
-                    <span className="text-gray-700">24/7 support</span>
+                    <span className="mr-2 mt-1" style={{color: '#C9973A'}}>✓</span>
+                    <span className="text-white/75">24/7 support</span>
                   </li>
                 </ul>
               </Card>
 
               {tour.id === 'dubai-campus-vibe' && (
                 <Card>
-                  <h3 className="font-bold text-gray-900 mb-4">Student Flyer</h3>
+                  <h3 className="font-bold text-white mb-4">Student Flyer</h3>
                   <div className="flex justify-center">
                     <div className="overflow-hidden rounded-lg shadow-md w-56">
                       <Image src="/CampusVibe.PNG" alt="Campus Vibe flyer" width={420} height={630} className="object-cover w-full" />
@@ -451,15 +451,15 @@ export default async function TourDetailPage({ params }: PageProps) {
 
               {tour.rating && tour.reviewCount && (
                 <Card>
-                  <h3 className="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                  <h3 className="font-bold text-white mb-4 flex items-center gap-2">
                     <span>⭐</span> Guest Reviews
                   </h3>
                   <div className="text-center">
                     <div className="text-3xl font-bold mb-1" style={{color: '#5D0531'}}>{tour.rating}</div>
-                    <div className="text-sm text-gray-600">Based on {tour.reviewCount} reviews</div>
-                    <div className="flex justify-center gap-1 mt-3">
+                    <div className="text-sm text-white/55">Based on {tour.reviewCount} reviews</div>
+                    <div className="flex justify-center gap-1 mt-3 text-lg" style={{ color: '#C9973A' }}>
                       {[...Array(5)].map((_, i) => (
-                        <span key={i} className={i < Math.floor(tour.rating || 0) ? '⭐' : '☆'}>✓</span>
+                        <span key={i}>{i < Math.floor(tour.rating || 0) ? '★' : '☆'}</span>
                       ))}
                     </div>
                   </div>

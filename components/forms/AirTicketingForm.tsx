@@ -80,9 +80,9 @@ export default function AirTicketingForm() {
 
   if (submitSuccess) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-        <div className="text-green-600 font-semibold mb-2">Thank you for your inquiry!</div>
-        <p className="text-green-700">We'll get back to you within 24 hours with the best flight options.</p>
+      <div style={{ background: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.3)' }} className="rounded-xl p-6 text-center">
+        <div className="text-green-400 font-semibold mb-2">Thank you for your inquiry!</div>
+        <p className="text-white/70">We&apos;ll get back to you within 24 hours with the best flight options.</p>
       </div>
     );
   }
@@ -91,12 +91,14 @@ export default function AirTicketingForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
+          variant="dark"
           label="Full Name"
           {...register('name')}
           error={errors.name?.message}
           required
         />
         <Input
+          variant="dark"
           label="Email"
           type="email"
           {...register('email')}
@@ -104,6 +106,7 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Phone Number"
           type="tel"
           {...register('phone')}
@@ -111,6 +114,7 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Origin"
           placeholder="e.g., Entebbe, Uganda"
           {...register('origin')}
@@ -118,6 +122,7 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Destination"
           placeholder="e.g., Dubai, UAE"
           {...register('destination')}
@@ -125,6 +130,7 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Departure Date"
           type="date"
           {...register('departureDate')}
@@ -132,12 +138,14 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Return Date (Optional)"
           type="date"
           {...register('returnDate')}
           error={errors.returnDate?.message}
         />
         <Select
+          variant="dark"
           label="Travel Class"
           options={[
             { value: 'economy', label: 'Economy' },
@@ -149,6 +157,7 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Adults"
           type="number"
           min="1"
@@ -158,6 +167,7 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Children (2-11 years)"
           type="number"
           min="0"
@@ -167,6 +177,7 @@ export default function AirTicketingForm() {
           required
         />
         <Input
+          variant="dark"
           label="Infants (Under 2 years)"
           type="number"
           min="0"
@@ -177,6 +188,7 @@ export default function AirTicketingForm() {
         />
       </div>
       <Textarea
+        variant="dark"
         label="Additional Message (Optional)"
         rows={4}
         placeholder="Any special requirements or preferences..."

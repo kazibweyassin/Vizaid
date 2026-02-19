@@ -74,9 +74,9 @@ export default function ContactForm() {
 
   if (submitSuccess) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-        <div className="text-green-600 font-semibold mb-2">Message sent successfully!</div>
-        <p className="text-green-700">We'll get back to you as soon as possible.</p>
+      <div style={{ background: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.3)' }} className="rounded-xl p-6 text-center">
+        <div className="text-green-400 font-semibold mb-2">Message sent successfully!</div>
+        <p className="text-white/70">We&apos;ll get back to you as soon as possible.</p>
       </div>
     );
   }
@@ -85,12 +85,14 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
+          variant="dark"
           label="Full Name"
           {...register('name')}
           error={errors.name?.message}
           required
         />
         <Input
+          variant="dark"
           label="Email"
           type="email"
           {...register('email')}
@@ -98,6 +100,7 @@ export default function ContactForm() {
           required
         />
         <Input
+          variant="dark"
           label="Phone Number"
           type="tel"
           {...register('phone')}
@@ -105,6 +108,7 @@ export default function ContactForm() {
           required
         />
         <Select
+          variant="dark"
           label="Subject"
           options={subjects.map(subject => ({ value: subject, label: subject }))}
           {...register('subject')}
@@ -113,6 +117,7 @@ export default function ContactForm() {
         />
       </div>
       <Textarea
+        variant="dark"
         label="Message"
         rows={6}
         placeholder="Please tell us how we can help you..."

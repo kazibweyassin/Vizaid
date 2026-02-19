@@ -95,9 +95,9 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
 
   if (submitSuccess) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-        <div className="text-green-600 font-semibold mb-2">Thank you for your inquiry!</div>
-        <p className="text-green-700">We'll prepare a customized tour package and get back to you within 24 hours.</p>
+      <div style={{ background: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.3)' }} className="rounded-xl p-6 text-center">
+        <div className="text-green-400 font-semibold mb-2">Thank you for your inquiry!</div>
+        <p className="text-white/70">We&apos;ll prepare a customized tour package and get back to you within 24 hours.</p>
       </div>
     );
   }
@@ -106,12 +106,14 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
+          variant="dark"
           label="Full Name"
           {...register('name')}
           error={errors.name?.message}
           required
         />
         <Input
+          variant="dark"
           label="Email"
           type="email"
           {...register('email')}
@@ -119,6 +121,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
           required
         />
         <Input
+          variant="dark"
           label="Phone Number"
           type="tel"
           {...register('phone')}
@@ -126,6 +129,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
           required
         />
         <Select
+          variant="dark"
           label="Tour Type"
           options={[
             { value: 'domestic', label: 'Domestic (Uganda)' },
@@ -140,6 +144,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
           }}
         />
         <Select
+          variant="dark"
           label="Destination"
           options={destinations.map(dest => ({ value: dest, label: dest }))}
           {...register('destination')}
@@ -147,6 +152,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
           required
         />
         <Input
+          variant="dark"
           label="Start Date"
           type="date"
           {...register('startDate')}
@@ -154,6 +160,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
           required
         />
         <Input
+          variant="dark"
           label="End Date"
           type="date"
           {...register('endDate')}
@@ -161,6 +168,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
           required
         />
         <Input
+          variant="dark"
           label="Group Size"
           type="number"
           min="1"
@@ -171,6 +179,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
         />
       </div>
       <Textarea
+        variant="dark"
         label="Preferences & Special Requirements (Optional)"
         rows={4}
         placeholder="e.g., accommodation preferences, activities of interest, dietary requirements..."
@@ -178,6 +187,7 @@ export default function TourForm({ tourType = 'domestic' }: { tourType?: 'intern
         error={errors.preferences?.message}
       />
       <Textarea
+        variant="dark"
         label="Additional Message (Optional)"
         rows={3}
         placeholder="Any other information you'd like to share..."

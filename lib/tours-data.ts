@@ -792,6 +792,12 @@ export const tourPackages: TourPackage[] = [
     duration: '7 Days / 6 Nights',
     price: 'From $2,500 per person',
     image: 'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&h=800&fit=crop',
+    galleryImages: [
+      'https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1511739001486-6bfe10ce785f?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=1200&h=800&fit=crop',
+      'https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=1200&h=800&fit=crop',
+    ],
     description: 'Experience two of Europe\'s most iconic cities. From the Eiffel Tower to Big Ben, discover the best of Paris and London.',
     highlights: [
       'Eiffel Tower visit',
@@ -802,6 +808,18 @@ export const tourPackages: TourPackage[] = [
     ],
     type: 'international',
     category: 'City Tour',
+    difficulty: 'Easy',
+    bestTimeToVisit: 'April–October (mild weather, long days)',
+    groupSize: 'Small groups (2–12)',
+    rating: 4.9,
+    reviewCount: 287,
+    whyChooseThis: [
+      'Two iconic European capitals in one trip',
+      'Scenic Eurostar train journey through the Channel',
+      'Curated mix of art, history, and culture',
+      'Central hotels for easy exploration',
+      'Museum passes and city tours included',
+    ],
     itinerary: [
       {
         day: 1,

@@ -4,23 +4,28 @@ import { cn } from '@/lib/utils';
 interface SelectProps extends SelectHTMLAttributes<HTMLSelectElement> {
   label?: string;
   error?: string;
+  variant?: 'light' | 'dark';
   options: { value: string; label: string }[];
 }
 
-export default function Select({ label, error, options, className, ...props }: SelectProps) {
+export default function Select({ label, error, variant = 'light', options, className, ...props }: SelectProps) {
+  const isDark = variant === 'dark';
+
   return (
     <div className="w-full">
       {label && (
-        <label className="block text-sm font-medium text-gray-700 mb-1">
+        <label className={cn('block text-sm font-medium mb-1', isDark ? 'text-white/80' : 'text-gray-700')}>
           {label}
-          {props.required && <span className="ml-1" style={{color: '#5D0531'}}>*</span>}
+          {props.required && <span className={cn('ml-1', isDark ? 'text-[#C9973A]' : 'text-[#5D0531]')}>*</span>}
         </label>
       )}
       <select
         className={cn(
-          'w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition-colors bg-white',
-          error && 'focus:ring-2 focus:border-0 focus:ring-opacity-50',
-          error && `border-[#5D0531] focus:ring-[#5D0531]/50`,
+          'w-full px-4 py-2 rounded-lg outline-none transition-colors',
+          isDark
+            ? 'bg-white/5 border border-white/20 text-white focus:border-[#C9973A]/50 focus:ring-2 focus:ring-[#C9973A]/20 [&>option]:bg-[#0f1923] [&>option]:text-white'
+            : 'border border-gray-300 bg-white focus:ring-2 focus:ring-blue-500 focus:border-blue-500',
+          error && 'border-rose-500 focus:ring-rose-500/50',
           className
         )}
         {...props}
@@ -31,10 +36,9 @@ export default function Select({ label, error, options, className, ...props }: S
           </option>
         ))}
       </select>
-      {error && <p className="mt-1 text-sm" style={{color: '#5D0531'}}>{error}</p>}
+      {error && (
+        <p className={cn('mt-1 text-sm', isDark ? 'text-rose-400' : 'text-[#5D0531]')}>{error}</p>
+      )}
     </div>
   );
 }
-
-
-

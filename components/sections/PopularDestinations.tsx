@@ -37,19 +37,31 @@ const destinations = [
   },
 ];
 
+const GOLD = '#C9973A';
+
 export default function PopularDestinations() {
   return (
-    <section className="py-20 bg-[#f5f5f0]">
+    <section className="py-24 bg-[#080e15] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Popular Destinations</h2>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-6">
+          <div>
+            <div className="inline-flex items-center gap-2 mb-4">
+              <div style={{ height: 1, width: 40, background: GOLD }} />
+              <span style={{ color: GOLD, fontSize: 11, fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase' }}>Explore</span>
+              <div style={{ height: 1, width: 40, background: GOLD }} />
+            </div>
+            <h2 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-4xl md:text-5xl font-bold text-white tracking-tight">
+              Popular&nbsp;
+              <span style={{ fontStyle: 'italic', color: GOLD }}>Destinations</span>
+            </h2>
+          </div>
           <Link href="/services/tours">
-            <button className="border border-gray-300 hover:border-gray-900 text-gray-900 px-6 py-2 rounded-lg font-semibold transition-colors shadow-md">
+            <button className="border border-white/20 hover:border-[#C9973A] text-white px-6 py-3 rounded-lg font-medium transition-colors">
               Search all destinations
             </button>
           </Link>
         </div>
-        <div className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4">
+        <div className="flex gap-6 overflow-x-auto pb-4 scrollbar-hide -mx-4 px-4">
           {destinations.map((destination, index) => (
             <motion.div
               key={destination.name}
@@ -60,7 +72,7 @@ export default function PopularDestinations() {
               className="flex-shrink-0"
             >
               <Link href={destination.href}>
-                <div className="relative w-80 h-[420px] rounded-2xl overflow-hidden shadow-xl group cursor-pointer">
+                <div className="relative w-80 h-[420px] rounded-2xl overflow-hidden border border-[rgba(255,255,255,0.07)] shadow-[0_8px_40px_rgba(0,0,0,0.35)] group cursor-pointer hover:border-[rgba(201,151,58,0.3)] transition-all duration-300">
                   <Image
                     src={destination.image}
                     alt={destination.name}
@@ -68,12 +80,12 @@ export default function PopularDestinations() {
                     className="object-cover group-hover:scale-105 transition-transform duration-300"
                     unoptimized
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/30 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-black/80" />
                   <div className="absolute bottom-0 left-0 right-0 p-8">
-                    <h3 className="text-3xl font-extrabold text-white mb-3 drop-shadow-lg tracking-tight">{destination.name}</h3>
-                    <button className="bg-white text-gray-900 font-bold px-5 py-2 rounded-lg shadow-lg hover:bg-gray-100 transition-colors text-lg">
-                      Explore
-                    </button>
+                    <h3 style={{ fontFamily: "'Playfair Display', Georgia, serif" }} className="text-3xl font-bold text-white mb-3 drop-shadow-lg">{destination.name}</h3>
+                    <span style={{ background: 'rgba(201,151,58,0.2)', border: '1px solid rgba(201,151,58,0.4)', color: GOLD }} className="inline-block px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition-opacity">
+                      Explore →
+                    </span>
                   </div>
                 </div>
               </Link>

@@ -83,9 +83,9 @@ export default function VisaForm() {
 
   if (submitSuccess) {
     return (
-      <div className="bg-green-50 border border-green-200 rounded-lg p-6 text-center">
-        <div className="text-green-600 font-semibold mb-2">Thank you for your inquiry!</div>
-        <p className="text-green-700">We'll contact you within 24 hours to assist with your visa application.</p>
+      <div style={{ background: 'rgba(34,197,94,0.15)', border: '1px solid rgba(34,197,94,0.3)' }} className="rounded-xl p-6 text-center">
+        <div className="text-green-400 font-semibold mb-2">Thank you for your inquiry!</div>
+        <p className="text-white/70">We&apos;ll contact you within 24 hours to assist with your visa application.</p>
       </div>
     );
   }
@@ -94,12 +94,14 @@ export default function VisaForm() {
     <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Input
+          variant="dark"
           label="Full Name"
           {...register('name')}
           error={errors.name?.message}
           required
         />
         <Input
+          variant="dark"
           label="Email"
           type="email"
           {...register('email')}
@@ -107,6 +109,7 @@ export default function VisaForm() {
           required
         />
         <Input
+          variant="dark"
           label="Phone Number"
           type="tel"
           {...register('phone')}
@@ -114,12 +117,14 @@ export default function VisaForm() {
           required
         />
         <Input
+          variant="dark"
           label="Nationality"
           {...register('nationality')}
           error={errors.nationality?.message}
           required
         />
         <Select
+          variant="dark"
           label="Destination Country"
           options={popularDestinations.map(dest => ({ value: dest, label: dest }))}
           {...register('destination')}
@@ -127,6 +132,7 @@ export default function VisaForm() {
           required
         />
         <Select
+          variant="dark"
           label="Visa Type"
           options={visaTypes.map(type => ({ value: type, label: type }))}
           {...register('visaType')}
@@ -134,6 +140,7 @@ export default function VisaForm() {
           required
         />
         <Input
+          variant="dark"
           label="Intended Travel Date"
           type="date"
           {...register('travelDate')}
@@ -147,6 +154,7 @@ export default function VisaForm() {
         />
       </div>
       <Textarea
+        variant="dark"
         label="Additional Information (Optional)"
         rows={4}
         placeholder="Any specific requirements or questions..."
