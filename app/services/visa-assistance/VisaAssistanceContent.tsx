@@ -46,7 +46,7 @@ const requiredDocuments = [
 
 export default function VisaAssistanceContent() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[var(--background)] min-h-screen">
       {/* Hero Section */}
       <div className="relative h-96 overflow-hidden">
         <Image
@@ -136,7 +136,7 @@ export default function VisaAssistanceContent() {
               ))}
             </ul>
             <div className="mt-6 p-4 rounded-lg" style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)', border: '1px solid rgba(93, 5, 49, 0.2)'}}>
-              <p className=\"text-sm\" style={{color: '#5D0531'}}>
+              <p className="text-sm" style={{color: '#5D0531'}}>
                 <strong>Note:</strong> Document requirements may vary by destination and visa type.
                 Our team will provide you with a complete checklist based on your specific needs.
               </p>

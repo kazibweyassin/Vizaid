@@ -5,15 +5,15 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 
 const cards = [
-  { title: 'Bespoke journeys', subtitle: 'Tailor-made itineraries', image: '/sc/next.PNG', href: '/services/tours' },
-  { title: 'Private & exclusive', subtitle: 'Small groups, curated experiences', image: '/sc/next2.PNG', href: '/services/tours' },
-  { title: 'Wildlife & culture', subtitle: 'Authentic local encounters', image: '/sc/next3.PNG', href: '/services/tours' },
+  { title: 'Bespoke journeys', subtitle: 'Tailor-made itineraries', image: 'https://images.unsplash.com/photo-1612409578638-b890d0fa9364?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', href: '/services/tours' },
+  { title: 'Private & exclusive', subtitle: 'Small groups, curated experiences', image: 'https://images.unsplash.com/photo-1489516408517-0c0a15662682?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', href: '/services/tours' },
+  { title: 'Wildlife & culture', subtitle: 'Authentic local encounters', image: 'https://images.unsplash.com/photo-1549944850-84e00be4203b?q=80&w=1068&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D', href: '/services/tours' },
 ];
 
 export default function NextAfterHero() {
   return (
-    <section className="py-16 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-16 bg-[var(--background)] w-full px-4 md:px-8">
+      <div className="w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {cards.map((c, i) => (
             <Link key={c.title} href={c.href} className="group block rounded-2xl overflow-hidden shadow-lg">

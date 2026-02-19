@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }: PageProps) {
   }
 
   return (
-    <div className="bg-white min-h-screen py-12">
+    <div className="bg-[var(--background)] min-h-screen py-12">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <Link href="/blog" className="mb-6 inline-flex items-center transition-colors hover:opacity-70" style={{color: '#5D0531'}}>
           <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,16 +97,15 @@ export default async function BlogPostPage({ params }: PageProps) {
           Back to Blog
         </Link>
 
-        <article className="bg-white border border-gray-200 rounded-lg p-8 md:p-12">
-          <div className="text-6xl mb-6 text-center bg-gray-100 rounded-lg p-8">
+        <article className="border border-[var(--brand-gold)] rounded-lg p-8 md:p-12 bg-[var(--background)]">
+          <div className="text-6xl mb-6 text-center bg-gray-800 rounded-lg p-8">
             {post.image}
           </div>
-          <div className="text-sm font-semibold mb-4" style={{color: '#5D0531'}}>{post.category}</div>
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{post.title}</h1>
-          <div className="text-sm text-gray-500 mb-8">{post.date}</div>
-          
-          <div className="prose max-w-none text-gray-700 leading-relaxed">
-            <p className="text-xl text-gray-600 mb-6">{post.excerpt}</p>
+          <div className="text-sm font-semibold mb-4" style={{color: '#C9973A'}}>{post.category}</div>
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">{post.title}</h1>
+          <div className="text-sm text-gray-400 mb-8">{post.date}</div>
+          <div className="prose max-w-none text-gray-300 leading-relaxed">
+            <p className="text-xl text-gray-400 mb-6">{post.excerpt}</p>
             <div className="text-lg">
               {post.content || 'This blog post content is coming soon. Check back later for the full article!'}
             </div>

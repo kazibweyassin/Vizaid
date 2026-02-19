@@ -58,10 +58,10 @@ export default async function TourDetailPage({ params }: PageProps) {
   const difficultyInfo = difficultyLevels[difficulty as keyof typeof difficultyLevels];
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[var(--background)] min-h-screen">
       {/* Hero Section with Breadcrumb */}
       <div className="text-white py-12" style={{background: 'linear-gradient(to right, #5D0531, rgba(93, 5, 49, 0.8))'}}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full">
           <div className="text-sm font-semibold mb-3 opacity-90">
             <Link href="/services/tours" className="hover:opacity-70">Tours</Link> / {tour.category}
           </div>
@@ -74,7 +74,7 @@ export default async function TourDetailPage({ params }: PageProps) {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div className="w-full py-12">
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
           {/* Main Content */}
           <div className="lg:col-span-3 space-y-8">
@@ -146,19 +146,19 @@ export default async function TourDetailPage({ params }: PageProps) {
             </div>
 
             {/* Overview */}
-            <Card>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Tour Overview</h2>
-              <p className="text-gray-700 leading-relaxed text-lg">{tour.description}</p>
+            <Card variant="premium">
+              <h2 className="text-2xl font-bold text-white mb-4">Tour Overview</h2>
+              <p className="text-gray-300 leading-relaxed text-lg">{tour.description}</p>
             </Card>
 
             {/* Highlights */}
-            <Card>
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">Tour Highlights</h2>
+            <Card variant="premium">
+              <h2 className="text-2xl font-bold text-white mb-6">Tour Highlights</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {tour.highlights.map((highlight, index) => (
                   <div key={index} className="flex items-start p-3 rounded border border-gray-100 hover:border-green-300 transition">
                     <span className="mr-3 mt-1 text-lg" style={{color: '#707E64'}}>✓</span>
-                    <span className="text-gray-700">{highlight}</span>
+                    <span className="text-gray-300">{highlight}</span>
                   </div>
                 ))}
               </div>
@@ -166,8 +166,8 @@ export default async function TourDetailPage({ params }: PageProps) {
 
             {/* Why Choose This Tour */}
             {tour.whyChooseThis && tour.whyChooseThis.length > 0 && (
-              <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Why Choose This Tour?</h2>
+              <Card variant="premium">
+                <h2 className="text-2xl font-bold text-white mb-6">Why Choose This Tour?</h2>
                 <div className="space-y-4">
                   {tour.whyChooseThis.map((reason, idx) => (
                     <div key={idx} className="flex items-start">
@@ -176,7 +176,7 @@ export default async function TourDetailPage({ params }: PageProps) {
                           <span className="text-white">{idx + 1}</span>
                         </div>
                       </div>
-                      <div className="text-gray-700">{reason}</div>
+                      <div className="text-gray-300">{reason}</div>
                     </div>
                   ))}
                 </div>
@@ -185,8 +185,8 @@ export default async function TourDetailPage({ params }: PageProps) {
 
             {/* Detailed Itinerary */}
             {tour.itinerary && tour.itinerary.length > 0 && (
-              <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-8">Detailed Itinerary</h2>
+              <Card variant="premium">
+                <h2 className="text-2xl font-bold text-white mb-8">Detailed Itinerary</h2>
                 <div className="space-y-6">
                   {tour.itinerary.map((day) => (
                     <div key={day.day} className="border-l-4 pl-6" style={{borderColor: '#5D0531'}}>
@@ -195,14 +195,14 @@ export default async function TourDetailPage({ params }: PageProps) {
                           Day {day.day}
                         </div>
                         <div>
-                          <h3 className="text-xl font-bold text-gray-900">{day.title}</h3>
-                          {day.meals && <p className="text-sm text-gray-600">🍴 {day.meals}</p>}
-                          {day.accommodation && <p className="text-sm text-gray-600">🏨 {day.accommodation}</p>}
+                          <h3 className="text-xl font-bold text-white">{day.title}</h3>
+                          {day.meals && <p className="text-sm text-gray-300">🍴 {day.meals}</p>}
+                          {day.accommodation && <p className="text-sm text-gray-300">🏨 {day.accommodation}</p>}
                         </div>
                       </div>
                       <ul className="space-y-2 ml-2">
                         {day.activities.map((activity, index) => (
-                          <li key={index} className="text-gray-700 flex items-start">
+                          <li key={index} className="text-gray-300 flex items-start">
                             <span className="mr-3 mt-0.5" style={{color: '#707E64'}}>▸</span>
                             <span>{activity}</span>
                           </li>
@@ -216,8 +216,8 @@ export default async function TourDetailPage({ params }: PageProps) {
 
             {/* Physical Requirements */}
             {tour.physicalRequirements && (
-              <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Physical Requirements & Fitness Level</h2>
+              <Card variant="premium">
+                <h2 className="text-2xl font-bold text-white mb-4">Physical Requirements & Fitness Level</h2>
                 <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
                   <p className="text-gray-700 leading-relaxed">{tour.physicalRequirements}</p>
                 </div>
@@ -226,8 +226,8 @@ export default async function TourDetailPage({ params }: PageProps) {
 
             {/* Best Time to Visit */}
             {tour.bestTimeToVisit && (
-              <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-4">Best Time to Visit</h2>
+              <Card variant="premium">
+                <h2 className="text-2xl font-bold text-white mb-4">Best Time to Visit</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-6">
                     <h3 className="font-bold text-gray-900 mb-2">🌤️ Recommended Season</h3>
@@ -245,8 +245,8 @@ export default async function TourDetailPage({ params }: PageProps) {
 
             {/* Pricing Tiers */}
             {tour.pricingTiers && tour.pricingTiers.length > 0 && (
-              <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Pricing Options</h2>
+              <Card variant="premium">
+                <h2 className="text-2xl font-bold text-white mb-6">Pricing Options</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {tour.pricingTiers.map((tier, idx) => (
                     <div
@@ -322,12 +322,12 @@ export default async function TourDetailPage({ params }: PageProps) {
 
             {/* Related Tours */}
             {relatedTours.length > 0 && (
-              <Card>
-                <h2 className="text-2xl font-bold text-gray-900 mb-6">Similar Tours You Might Like</h2>
+              <Card variant="premium">
+                <h2 className="text-2xl font-bold text-white mb-6">Similar Tours You Might Like</h2>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   {relatedTours.map((relatedTour) => (
                     <Link key={relatedTour.id} href={`/services/tours/${relatedTour.id}`}>
-                      <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer h-full">
+                      <div className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition cursor-pointer h-full bg-white">
                         <div className="relative h-40 bg-gray-200">
                           {relatedTour.image && (
                             <Image
@@ -368,7 +368,7 @@ export default async function TourDetailPage({ params }: PageProps) {
           <div className="lg:col-span-1">
             <div className="sticky top-24 space-y-4">
               {/* Main Booking Card */}
-              <Card className="border-2" style={{borderColor: '#5D0531'}}>
+              <Card className="border-2 border-[#5D0531]">
                 <div className="text-center mb-6 pb-6 border-b border-gray-200">
                   <div className="text-sm text-gray-600 mb-2">From</div>
                   <div className="text-4xl font-bold mb-1" style={{color: '#5D0531'}}>
@@ -437,6 +437,17 @@ export default async function TourDetailPage({ params }: PageProps) {
                   </li>
                 </ul>
               </Card>
+
+              {tour.id === 'dubai-campus-vibe' && (
+                <Card>
+                  <h3 className="font-bold text-gray-900 mb-4">Student Flyer</h3>
+                  <div className="flex justify-center">
+                    <div className="overflow-hidden rounded-lg shadow-md w-56">
+                      <Image src="/CampusVibe.PNG" alt="Campus Vibe flyer" width={420} height={630} className="object-cover w-full" />
+                    </div>
+                  </div>
+                </Card>
+              )}
 
               {tour.rating && tour.reviewCount && (
                 <Card>

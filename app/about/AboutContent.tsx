@@ -6,22 +6,24 @@ import Button from '@/components/ui/Button';
 
 export default function AboutContent() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[var(--background)] min-h-screen">
       {/* Hero Section */}
       <div
-        className="relative h-96 md:h-[500px] text-white flex items-center justify-center"
+        className="relative h-96 md:h-[500px] text-white"
         style={{
           backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=800&fit=crop)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}
       >
-        <div className="text-center px-4">
-          <p className="text-sm font-semibold mb-2 opacity-90">About Vizaid Travel</p>
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">Crafting Unforgettable Journeys</h1>
-          <p className="text-xl opacity-90 max-w-2xl mx-auto">
-            Expert travel services tailored to your dreams, making every adventure seamless and memorable
-          </p>
+        <div className="absolute inset-0 flex items-center px-6">
+          <div className="w-full max-w-3xl text-left pl-6 md:pl-12 lg:pl-24">
+            <p className="text-sm font-semibold mb-2 opacity-90">About Vizaid Travel</p>
+            <h1 className="text-4xl md:text-6xl font-bold mb-4">Crafting Unforgettable Journeys</h1>
+            <p className="text-xl opacity-90 max-w-2xl">
+              Expert travel services tailored to your dreams, making every adventure seamless and memorable
+            </p>
+          </div>
         </div>
       </div>
 

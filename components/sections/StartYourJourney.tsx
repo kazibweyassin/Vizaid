@@ -5,11 +5,11 @@ import Image from 'next/image';
 
 export default function StartYourJourney() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <section className="py-20 bg-[var(--background)] w-full px-4 md:px-8">
+      <div className="w-full">
         <div className="relative rounded-2xl overflow-hidden shadow-2xl">
           <div className="relative h-72 md:h-[420px] w-full">
-            <Image src="/sc/startyourjounery.PNG" alt="Start your journey" fill className="object-cover" />
+            <Image src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=1200&q=80" alt="Start your journey Unsplash" fill className="object-cover" />
             <div className="absolute inset-0 bg-black/40" />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 text-white">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight">Start your journey with us</h2>

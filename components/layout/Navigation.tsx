@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
 import { tourPackages } from '@/lib/tours-data';
@@ -23,29 +23,46 @@ export default function Navigation() {
   const pathname = usePathname();
   const isHome = pathname === '/';
 
+  // switch navbar appearance when the page is scrolled (or when not on home)
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    if (!isHome) {
+      setScrolled(true);
+      return;
+    }
+
+    const onScroll = () => setScrolled(window.scrollY > 80);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [isHome]);
+
+  const navIsLight = !isHome || scrolled;
+
   return (
-    <nav className={cn(isHome ? 'absolute inset-x-0 top-0 z-50' : 'bg-white sticky top-0 z-50 shadow-sm', 'transition-colors')}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+    <nav className={cn('sticky top-0 z-50 w-full transition-colors', navIsLight ? 'bg-white shadow-sm' : 'bg-black/30 backdrop-blur-sm')}>
+      <div className="w-full px-4 md:px-8">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 flex items-center justify-center">
+          <Link href="/" className={cn('flex items-center space-x-3 relative ml-8 md:ml-10 lg:ml-[88px]')}>
+            <div className="w-20 h-20 flex items-center justify-center">
               <Image 
                 src="/logo.png" 
-                alt="Vizaid Logo" 
-                width={40} 
-                height={40} 
+                alt="Vizaid_Logo" 
+                width={80} 
+                height={80} 
                 className="object-contain"
               />
             </div>
-            <span className="text-xl font-bold" style={{ color: isHome ? '#fff' : '#5D0531' }}>Vizaid</span>
+
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {/* Domestic dropdown */}
             <div className="relative group">
-              <button className={cn(isHome ? 'text-white' : 'text-gray-800', 'transition-colors font-medium text-sm hover:opacity-70 inline-flex items-center gap-2')}>
+              <button className={cn(navIsLight ? 'text-gray-800' : 'text-white', 'transition-colors font-medium text-base hover:opacity-70 inline-flex items-center gap-2')}>
                 Domestic
                 <svg className="w-3 h-3" viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M6 8l4 4 4-4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
@@ -82,7 +99,7 @@ export default function Navigation() {
 
             {/* International dropdown */}
             <div className="relative group">
-              <button className={cn(isHome ? 'text-white' : 'text-gray-800', 'transition-colors font-medium text-sm hover:opacity-70 inline-flex items-center gap-2')}>
+              <button className={cn(navIsLight ? 'text-gray-800' : 'text-white', 'transition-colors font-medium text-base hover:opacity-70 inline-flex items-center gap-2')}>
                 International
                 <svg className="w-3 h-3" viewBox="0 0 20 20" fill="none" stroke="currentColor"><path d="M6 8l4 4 4-4" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/></svg>
               </button>
@@ -122,7 +139,7 @@ export default function Navigation() {
               <Link
                 key={`${link.href}-${link.label}-${index}`}
                 href={link.href}
-                className={cn(isHome ? 'text-white' : 'text-gray-800', 'transition-colors font-medium text-sm hover:opacity-70')}
+                className={cn(navIsLight ? 'text-gray-800' : 'text-white', 'transition-colors font-medium text-base hover:opacity-70')}
               >
                 {link.label}
               </Link>
@@ -131,19 +148,19 @@ export default function Navigation() {
 
           {/* Utility Icons + CTA */}
           <div className="hidden md:flex items-center space-x-6">
-            <Link href="/contact" className={cn(isHome ? 'text-white border-white/30 bg-white/5' : 'bg-[#5D0531] text-white', 'px-4 py-2 rounded-lg font-medium border transition-colors')}>Start your journey</Link>
+            <Link href="/contact" className={cn(navIsLight ? 'bg-[#5D0531] text-white' : 'text-white border-white/30 bg-white/5', 'px-4 py-2 rounded-lg font-medium border transition-colors')}>Start your journey</Link>
 
-            <button className={cn(isHome ? 'text-white' : 'text-gray-800', 'transition-colors hover:opacity-70')} aria-label="Favorites">
+            <button className={cn(navIsLight ? 'text-gray-800' : 'text-white', 'transition-colors hover:opacity-70')} aria-label="Favorites">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
               </svg>
             </button>
-            <button className={cn(isHome ? 'text-white' : 'text-gray-800', 'transition-colors hover:opacity-70')} aria-label="Account">
+            <button className={cn(navIsLight ? 'text-gray-800' : 'text-white', 'transition-colors hover:opacity-70')} aria-label="Account">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
               </svg>
             </button>
-            <Link href="/contact" className={cn(isHome ? 'text-white' : 'text-gray-800', 'transition-colors hover:opacity-70')} aria-label="Contact">
+            <Link href="/contact" className={cn(navIsLight ? 'text-gray-800' : 'text-white', 'transition-colors hover:opacity-70')} aria-label="Contact">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
@@ -152,7 +169,7 @@ export default function Navigation() {
 
           {/* Mobile Menu Button */}
           <button
-            className={cn('md:hidden p-2', isHome ? 'text-white' : 'text-gray-700')}
+            className={cn('md:hidden p-2', navIsLight ? 'text-gray-700' : 'text-white')}
             onClick={() => setIsOpen(!isOpen)}
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

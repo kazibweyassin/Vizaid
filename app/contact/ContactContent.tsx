@@ -66,7 +66,7 @@ const socialLinks = [
 
 export default function ContactContent() {
   return (
-    <div className="bg-white min-h-screen py-12">
+    <div className="bg-[var(--background)] min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
@@ -135,7 +135,7 @@ export default function ContactContent() {
                     target={social.href.startsWith('http') ? '_blank' : undefined}
                     rel={social.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="flex items-center space-x-2 p-3 bg-gray-50 rounded-lg border border-transparent transition-colors text-gray-700"
-                    style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)'}}^
+                    style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)'}}
                   >
                     <span className="flex-shrink-0">{social.icon}</span>
                     <span className="font-medium">{social.name}</span>
@@ -148,8 +148,7 @@ export default function ContactContent() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.6 }}
-              className="rounded-lg p-6"
-              style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)'}} 
+              style={{backgroundColor: 'rgba(93, 5, 49, 0.05)', borderColor: 'rgba(93, 5, 49, 0.2)'}}
               className="rounded-lg p-6 border"
             >
               <h3 className="text-xl font-bold text-gray-900 mb-2">Need Immediate Assistance?</h3>

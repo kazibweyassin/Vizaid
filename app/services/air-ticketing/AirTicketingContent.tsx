@@ -50,7 +50,7 @@ const benefits = [
 
 export default function AirTicketingContent() {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-[var(--background)] min-h-screen">
       {/* Hero Section */}
       <div className="relative h-96 overflow-hidden">
         <Image

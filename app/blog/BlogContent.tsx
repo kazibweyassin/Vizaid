@@ -56,7 +56,7 @@ const blogPosts = [
 
 export default function BlogContent() {
   return (
-    <div className="bg-white min-h-screen py-12">
+    <div className="bg-[var(--background)] min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div

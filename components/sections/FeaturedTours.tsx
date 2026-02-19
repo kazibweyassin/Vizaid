@@ -9,8 +9,8 @@ const featuredTours = tourPackages.slice(0, 7);
 
 export default function FeaturedTours() {
   return (
-    <section className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-[var(--background)] w-full px-4 md:px-8">
+      <div className="w-full">
         <div className="flex items-center justify-between mb-8">
           <div>
             <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">Only Vizaid experiences</h2>

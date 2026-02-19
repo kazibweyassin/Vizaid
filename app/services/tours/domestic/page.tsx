@@ -10,7 +10,7 @@ const domesticTours = tourPackages.filter((tour) => tour.type === 'domestic');
 
 export default function DomesticToursPage() {
   return (
-    <div className="bg-white min-h-screen py-12">
+    <div className="bg-[var(--background)] min-h-screen py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-12">
@@ -45,7 +45,7 @@ export default function DomesticToursPage() {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                 >
                   <Link href={`/services/tours/${tour.id}`}>
-                    <div className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer" style={{borderColor: '#5D0531'}}>
+                    <div className="border border-[var(--brand-gold)] rounded-lg overflow-hidden hover:shadow-lg transition-all duration-300 group cursor-pointer bg-[var(--background)]">
                       <div className="flex gap-4 p-4">
                         <div className="flex-shrink-0">
                           <div className="relative w-24 h-24 bg-gray-200 rounded-lg overflow-hidden">
@@ -65,24 +65,23 @@ export default function DomesticToursPage() {
                           </div>
                         </div>
                         <div className="flex-grow">
-                          <div className="text-xs font-semibold mb-1" style={{color: '#5D0531'}}>{tour.category}</div>
-                          <h3 className="text-lg font-bold text-gray-900 mb-1 group-hover:opacity-70 transition-colors">
+                          <div className="text-xs font-semibold mb-1" style={{color: '#C9973A'}}>{tour.category}</div>
+                          <h3 className="text-lg font-bold text-white mb-1 group-hover:opacity-70 transition-colors">
                             {tour.title}
                           </h3>
-                          <div className="text-sm text-gray-500 mb-3">{tour.duration}</div>
+                          <div className="text-sm text-gray-400 mb-3">{tour.duration}</div>
                           <div className="flex flex-wrap gap-2 mb-3">
                             {tour.highlights.slice(0, 2).map((highlight) => (
                               <span
                                 key={highlight}
-                                className="px-2 py-1 rounded-full text-xs font-medium" style={{backgroundColor: 'rgba(93, 5, 49, 0.1)', color: '#5D0531'}}
-                              >
+                                className="px-2 py-1 rounded-full text-xs font-medium" style={{backgroundColor: 'rgba(201, 151, 58, 0.1)', color: '#C9973A'}}>
                                 {highlight}
                               </span>
                             ))}
                           </div>
                           <div className="flex justify-between items-center">
-                            <div className="text-lg font-bold text-gray-900">{tour.price}</div>
-                            <div className="font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform" style={{color: '#5D0531'}}>
+                            <div className="text-lg font-bold text-white">{tour.price}</div>
+                            <div className="font-medium text-sm flex items-center gap-1 group-hover:translate-x-1 transition-transform" style={{color: '#C9973A'}}>
                               View Details
                               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

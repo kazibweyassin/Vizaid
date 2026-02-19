@@ -1,10 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #080e15; /* dark luxury base */
+  --foreground: #e8e8e8; /* light foreground for dark canvas */
   --primary-burgundy: #5D0531;
   --primary-green: #707E64;
+  --brand-gold: #C9973A;
   --burgundy-dark: #4a0426;
   --burgundy-light: #f5d4d8;
   --burgundy-lighter: #fde9eb;
@@ -20,7 +21,13 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
+  font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+}
+
+/* Headings use Playfair Display for an editorial look */
+h1,h2,h3,h4,h5 {
+  font-family: 'Playfair Display', Georgia, serif;
+  color: var(--foreground);
 }
 
 /* Smooth scrolling */
